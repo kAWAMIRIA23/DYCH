@@ -119,7 +119,7 @@ export function Footer() {
             <Image src="/images/dych-icon.png" alt="" width={24} height={24} className="rounded-full" />
             © {new Date().getFullYear()} DYCH Technologies
           </span>
-          <span>Smart School Systems</span>
+          <span>Smart Vizion</span>
         </div>
       </div>
     </footer>

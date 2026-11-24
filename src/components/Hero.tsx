@@ -31,7 +31,7 @@ export function Hero() {
         </h1>
         <div>
           <p className="max-w-[40ch] text-lg leading-relaxed text-cream-soft sm:text-[19px]">
-            Smart School Systems watches your gate so your staff don&apos;t have to. It knows
+            Smart Vizion watches your gate so your staff don&apos;t have to. It knows
             every student, records when they arrive and leave, and tells parents straight away.
           </p>
           <div className="mt-7 flex flex-wrap gap-3.5">

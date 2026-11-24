@@ -20,7 +20,7 @@ export function About() {
           </h2>
           <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-ink-body">
             DYCH Technologies builds automation and system management for organisations that
-            need to run more efficiently, securely and reliably. Smart School Systems is that
+            need to run more efficiently, securely and reliably. Smart Vizion is that
             work applied to the school day: the gate, the register, the parents and the fees.
           </p>
           <p className="mt-4 max-w-[52ch] text-lg leading-relaxed text-ink-body">

@@ -9,7 +9,7 @@ const hanken = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Smart School Systems | DYCH Technologies",
+  title: "Smart Vizion | DYCH Technologies",
   description:
     "Secure entry, automatic attendance and instant parent alerts for schools across Africa, from DYCH Technologies in Kampala.",
 };
