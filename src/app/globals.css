@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* DYCH design tokens.
+   Teal carries the dark sections, cream the light ones. Amber and apricot are
+   accents and only ever sit on teal, where they read at 7:1 and above; on
+   cream they would fail contrast, so light sections use teal ink instead.
+   The violet lives in the logo mark and nowhere else. */
+@theme {
+  --color-ground: #031f24;
+  --color-teal: #042c33;
+  --color-teal-raised: #0b3f47;
+  --color-teal-line: #1c535c;
+  --color-cream: #f7e7ce;
+  --color-cream-soft: #e4d6bf;
+  --color-paper: #fbf6ec;
+  --color-paper-line: #e8dcc6;
+  --color-ink: #042c33;
+  --color-ink-body: #24474d;
+  --color-ink-sub: #4d6a6f;
+  --color-amber: #eaa652;
+  --color-apricot: #ffcc99;
+
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

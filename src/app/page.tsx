@@ -6,16 +6,21 @@ import { Integration } from "@/components/Integration";
 import { Trust } from "@/components/Trust";
 import { Footer } from "@/components/Footer";
 
+/* Section grounds alternate so the page reads in bands:
+   teal hero, paper about, cream solutions, teal how-it-works,
+   paper trust, deep-teal contact. */
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-200 selection:bg-cyan-500/30">
+    <>
       <Navbar />
-      <Hero />
-      <About />
-      <Solutions />
-      <Integration />
-      <Trust />
+      <main>
+        <Hero />
+        <About />
+        <Solutions />
+        <Integration />
+        <Trust />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

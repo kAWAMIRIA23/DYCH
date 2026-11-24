@@ -1,72 +1,72 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Shield, Clock, MessageSquare, CreditCard } from "lucide-react";
+import Image from "next/image";
+import { ShieldCheck, ClipboardCheck, MessageSquareText, Wallet } from "lucide-react";
 
 const solutions = [
   {
-    title: "Improving Student Security",
-    description: "We use advanced automated systems, including biometric and digital identification, to help schools monitor student attendance and secure entry points.",
-    icon: Shield,
-    color: "text-cyan-400",
+    title: "Student security",
+    description:
+      "Biometric and digital identification at every entry point, so you know who is inside the school and who is not.",
+    icon: ShieldCheck,
   },
   {
-    title: "Accurate Attendance Management",
-    description: "Attendance is automatically recorded as students arrive and leave school, eliminating errors associated with manual registers.",
-    icon: Clock,
-    color: "text-blue-500",
+    title: "Accurate attendance",
+    description:
+      "Students are marked in and out as they pass the gate. No paper registers, no copying errors, no missing pages.",
+    icon: ClipboardCheck,
   },
   {
-    title: "Real-Time Parent Communication",
-    description: "Bridges the communication gap by sending automatic notifications on student arrival, departure, and daily attendance status.",
-    icon: MessageSquare,
-    color: "text-green-400",
+    title: "Parent communication",
+    description:
+      "Parents get an automatic message when their child arrives and leaves, and a daily attendance summary.",
+    icon: MessageSquareText,
   },
   {
-    title: "School Fees & Finance",
-    description: "Student profiles linked to fee payment systems with automated reminders to parents, improving financial tracking.",
-    icon: CreditCard,
-    color: "text-purple-400",
+    title: "School fees and finance",
+    description:
+      "Each student profile is linked to their fee account, with automatic reminders to parents and clear records for the bursar.",
+    icon: Wallet,
   },
 ];
 
 export function Solutions() {
   return (
-    <section id="solutions" className="py-24 bg-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Key Solutions
-          </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            Comprehensive digital tools designed for modern educational institutions.
-          </p>
-        </div>
+    <section id="solutions" className="scroll-mt-18 bg-cream py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-16">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <h2 className="max-w-[14ch] text-[clamp(2.2rem,4.2vw,3.6rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-ink">
+              One system for the whole school day.
+            </h2>
+            <p className="mt-6 max-w-[44ch] text-lg leading-relaxed text-ink-body">
+              Four jobs that usually take paper, phone calls and guesswork, handled from the
+              moment a student reaches the gate.
+            </p>
+            <div className="relative mt-10 hidden aspect-[4/3] overflow-hidden rounded-sm lg:block">
+              <Image
+                src="/images/guard.jpg"
+                alt="A school security guard checking the gate cameras on a tablet"
+                fill
+                sizes="40vw"
+                className="object-cover object-[60%_40%]"
+              />
+            </div>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {solutions.map((solution, index) => (
-            <motion.div
-              key={solution.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800 hover:border-cyan-900/50 transition-colors duration-300 group"
-            >
-              <div className={`mb-6 p-4 rounded-xl bg-slate-800/50 inline-block ${solution.color}`}>
-                <solution.icon className="w-8 h-8" />
-              </div>
-              <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
-                {solution.title}
-              </h3>
-              <p className="text-slate-400 leading-relaxed">
-                {solution.description}
-              </p>
-            </motion.div>
-          ))}
+          <ul className="border-t border-ink/20">
+            {solutions.map((s) => (
+              <li key={s.title} className="grid grid-cols-[auto_1fr] gap-x-5 border-b border-ink/20 py-8">
+                <s.icon className="mt-1 h-6 w-6 text-ink" aria-hidden="true" />
+                <div>
+                  <h3 className="text-2xl font-extrabold tracking-tight text-ink">{s.title}</h3>
+                  <p className="mt-2 max-w-[52ch] text-[17px] leading-relaxed text-ink-body">
+                    {s.description}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
   );
 }
-

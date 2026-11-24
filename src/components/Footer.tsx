@@ -1,117 +1,127 @@
 "use client";
 
-import { Mail, Phone, MapPin } from "lucide-react";
+import { useState, type FormEvent } from "react";
+import Image from "next/image";
+
+const EMAIL = "xristeck@gmail.com";
+const PHONES = ["+256 767 870035", "+256 788 195067"];
+
+const field =
+  "w-full rounded-sm border border-teal-line bg-ground px-4 py-3 text-cream placeholder:text-cream-soft/50 focus:border-amber focus:outline-none";
 
 export function Footer() {
+  const [opened, setOpened] = useState(false);
+
+  // There is no form backend yet, so the message is handed to the visitor's
+  // own email app, addressed to the team and already filled in.
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const subject = `Demo request from ${data.get("school") || data.get("name")}`;
+    const body = [
+      `Name: ${data.get("name")}`,
+      `School: ${data.get("school")}`,
+      `Email: ${data.get("email")}`,
+      "",
+      `${data.get("message")}`,
+    ].join("\n");
+    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setOpened(true);
+  }
+
   return (
-    <footer id="contact-team" className="bg-slate-950 border-t border-slate-900 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-          {/* Contact Info */}
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-8">Contact Our Team</h2>
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <Phone className="w-6 h-6 text-cyan-400 mt-1" />
-                <div>
-                  <p className="text-slate-400">Call Us</p>
-                  <a href="tel:+256767870035" className="block text-white hover:text-cyan-400 transition-colors">
-                    +256 767870035
-                  </a>
-                  <a href="tel:+256788195067" className="block text-white hover:text-cyan-400 transition-colors">
-                    +256 788195067
-                  </a>
-                </div>
-              </div>
+    <footer id="contact" className="scroll-mt-18 bg-ground text-cream">
+      <div className="mx-auto grid max-w-7xl gap-14 px-4 py-20 sm:px-6 sm:py-28 md:grid-cols-[1fr_1.1fr] lg:gap-24 lg:px-16">
+        <div>
+          <h2 className="max-w-[14ch] text-[clamp(2.2rem,4.2vw,3.6rem)] font-extrabold leading-[1.02] tracking-[-0.03em]">
+            See it working at your gate.
+          </h2>
+          <p className="mt-6 max-w-[42ch] text-lg leading-relaxed text-cream-soft">
+            Tell us about your school and we will arrange a demonstration on site or online.
+          </p>
 
-              <div className="flex items-start space-x-4">
-                <Mail className="w-6 h-6 text-cyan-400 mt-1" />
-                <div>
-                  <p className="text-slate-400">Email Us</p>
-                  <a href="mailto:xristeck@gmail.com" className="block text-white hover:text-cyan-400 transition-colors">
-                    xristeck@gmail.com
+          <dl className="mt-12 space-y-7">
+            <div>
+              <dt className="text-sm text-cream-soft">Call us</dt>
+              {PHONES.map((p) => (
+                <dd key={p}>
+                  <a href={`tel:${p.replace(/\s/g, "")}`} className="text-xl font-semibold hover:text-apricot">
+                    {p}
                   </a>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <MapPin className="w-6 h-6 text-cyan-400 mt-1" />
-                <div>
-                  <p className="text-slate-400">Location</p>
-                  <p className="text-white">Kampala, Uganda</p>
-                </div>
-              </div>
+                </dd>
+              ))}
             </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-slate-900 p-8 rounded-2xl border border-slate-800">
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-1">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-cyan-400 transition-colors"
-                  placeholder="Your Name"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-slate-400 mb-1">
-                  Company / School
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-cyan-400 transition-colors"
-                  placeholder="School Name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-400 mb-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-cyan-400 transition-colors"
-                  placeholder="email@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-400 mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-cyan-400 transition-colors"
-                  placeholder="How can we help you?"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-lg transition-colors shadow-lg hover:shadow-cyan-500/20"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
+            <div>
+              <dt className="text-sm text-cream-soft">Email us</dt>
+              <dd>
+                <a href={`mailto:${EMAIL}`} className="text-xl font-semibold hover:text-apricot">
+                  {EMAIL}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-sm text-cream-soft">Visit us</dt>
+              <dd className="text-xl font-semibold">Kampala, Uganda</dd>
+            </div>
+          </dl>
         </div>
 
-        <div className="border-t border-slate-900 pt-8 text-center">
-          <p className="text-slate-500">
-            © {new Date().getFullYear()} Dych Technologies. All rights reserved.
+        <form onSubmit={onSubmit} className="space-y-5 rounded-sm border border-teal-line bg-teal p-6 sm:p-8">
+          <div className="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-cream-soft">
+                Your name
+              </label>
+              <input id="name" name="name" required autoComplete="name" className={field} />
+            </div>
+            <div>
+              <label htmlFor="school" className="mb-1.5 block text-sm font-medium text-cream-soft">
+                School
+              </label>
+              <input id="school" name="school" required autoComplete="organization" className={field} />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-cream-soft">
+              Email
+            </label>
+            <input id="email" name="email" type="email" required autoComplete="email" className={field} />
+          </div>
+          <div>
+            <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-cream-soft">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              className={field}
+              placeholder="Number of students, number of gates, anything else we should know"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full rounded bg-amber px-6 py-4 font-extrabold text-ground hover:bg-apricot"
+          >
+            Request a demo
+          </button>
+          <p className="text-sm text-cream-soft" aria-live="polite">
+            {opened
+              ? `Your email app should now be open with the message ready. If it did not open, write to ${EMAIL}.`
+              : "This opens your email app with the message filled in."}
           </p>
+        </form>
+      </div>
+
+      <div className="border-t border-teal-line">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-6 text-sm text-cream-soft sm:px-6 lg:px-16">
+          <span className="flex items-center gap-2.5">
+            <Image src="/images/dych-icon.png" alt="" width={24} height={24} className="rounded-full" />
+            © {new Date().getFullYear()} DYCH Technologies
+          </span>
+          <span>Smart School Systems</span>
         </div>
       </div>
     </footer>
   );
 }
-

@@ -1,77 +1,47 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Camera, Fingerprint, Bell, BarChart3 } from "lucide-react";
-
 const steps = [
   {
-    title: "Security",
-    description: "CCTV & Facial recognition linked to entry points.",
-    icon: Camera,
+    title: "At the gate",
+    description: "A camera and biometric reader identify the student at the entry point.",
   },
   {
-    title: "Attendance",
-    description: "RFID/Biometric marking upon arrival.",
-    icon: Fingerprint,
+    title: "In the register",
+    description: "Attendance is marked with the exact time, by RFID or biometrics.",
   },
   {
-    title: "Alerts",
-    description: "Instant SMS/App notifications to parents.",
-    icon: Bell,
+    title: "To the parent",
+    description: "An SMS or app message goes home the same minute.",
   },
   {
-    title: "Analytics",
-    description: "Dashboards for security logs and attendance trends.",
-    icon: BarChart3,
+    title: "On the dashboard",
+    description: "Staff see security logs and attendance trends for every class and day.",
   },
 ];
 
 export function Integration() {
   return (
-    <section id="integration" className="py-24 bg-slate-900 relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
-        <div className="absolute top-1/4 -left-10 w-96 h-96 bg-cyan-900/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 -right-10 w-96 h-96 bg-blue-900/30 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            System Integration
+    <section id="how-it-works" className="scroll-mt-18 bg-teal py-20 text-cream sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-16">
+        <div className="grid gap-6 md:grid-cols-[1.2fr_1fr] md:items-end">
+          <h2 className="max-w-[16ch] text-[clamp(2.2rem,4.2vw,3.6rem)] font-extrabold leading-[1.02] tracking-[-0.03em]">
+            From the gate to the parent&apos;s phone, automatically.
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            A seamless flow from entry to insight.
+          <p className="max-w-[44ch] text-lg leading-relaxed text-cream-soft">
+            Each arrival moves through the same four steps automatically. Nobody on your staff
+            has to do anything.
           </p>
         </div>
 
-        <div className="relative">
-          {/* Connecting Line (Horizontal on Desktop) */}
-          <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-800 -translate-y-1/2 rounded-full" />
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            {steps.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="relative flex flex-col items-center text-center"
-              >
-                <div className="w-16 h-16 rounded-full bg-slate-800 border-2 border-cyan-500 flex items-center justify-center mb-6 z-10 shadow-[0_0_15px_rgba(34,211,238,0.3)]">
-                  <step.icon className="w-8 h-8 text-cyan-400" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Step {index + 1}: {step.title}</h3>
-                <p className="text-slate-400 text-sm">
-                  {step.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        {/* A real sequence, so the steps are numbered */}
+        <ol className="mt-16 grid gap-px overflow-hidden rounded-sm bg-teal-line sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((s, i) => (
+            <li key={s.title} className="bg-teal p-7">
+              <span className="block text-sm font-semibold tabular-nums text-amber">Step {i + 1}</span>
+              <h3 className="mt-6 text-xl font-extrabold">{s.title}</h3>
+              <p className="mt-2 leading-relaxed text-cream-soft">{s.description}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
 }
-
