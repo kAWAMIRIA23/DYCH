@@ -41,7 +41,7 @@ export function Solutions() {
               Four jobs that usually take paper, phone calls and guesswork, handled from the
               moment a student reaches the gate.
             </p>
-            <div className="relative mt-10 hidden aspect-[4/3] overflow-hidden rounded-sm lg:block">
+            <div className="relative mt-10 hidden aspect-[4/3] overflow-hidden rounded-[14px] border-[6px] border-teal lg:block">
               <Image
                 src="/images/guard.jpg"
                 alt="A school security guard checking the gate cameras on a tablet"
@@ -55,7 +55,9 @@ export function Solutions() {
           <ul className="border-t border-ink/20">
             {solutions.map((s) => (
               <li key={s.title} className="grid grid-cols-[auto_1fr] gap-x-5 border-b border-ink/20 py-8">
-                <s.icon className="mt-1 h-6 w-6 text-ink" aria-hidden="true" />
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-amber" aria-hidden="true">
+                  <s.icon className="h-5 w-5 text-teal" />
+                </span>
                 <div>
                   <h3 className="text-2xl font-extrabold tracking-tight text-ink">{s.title}</h3>
                   <p className="mt-2 max-w-[52ch] text-[17px] leading-relaxed text-ink-body">

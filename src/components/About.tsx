@@ -2,9 +2,11 @@ import Image from "next/image";
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-18 bg-paper py-20 sm:py-28">
+    <section id="about" className="scroll-mt-18 overflow-hidden bg-paper py-20 sm:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-[1fr_1fr] md:items-center lg:gap-20 lg:px-16">
-        <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-sm md:max-w-none">
+        <div className="relative w-full max-w-md md:max-w-none">
+          <div className="absolute -left-[18%] top-[12%] aspect-square w-[95%] rounded-full bg-amber" aria-hidden="true" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[14px] border-[6px] border-teal">
           <Image
             src="/images/gate.jpg"
             alt="Students walking through a school gate at sunrise, past an entry camera"
@@ -12,6 +14,7 @@ export function About() {
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
           />
+          </div>
         </div>
 
         <div>

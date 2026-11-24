@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 /* DYCH design tokens.
-   Teal carries the dark sections, cream the light ones. Amber and apricot are
-   accents and only ever sit on teal or violet, where they read at 7:1 and above; on
-   cream they would fail contrast, so light sections use teal ink instead.
-   Deep violet, from the logo, grounds the parents section; apricot and
-   amber carry its type and actions there, as they do on teal. */
+   Teal grounds the dark sections, with cream headlines, mist body copy and
+   apricot primary buttons. Amber is the big shape colour: circles set behind
+   photos, on teal or on light grounds, never under text. Cream cards sit on
+   teal and carry teal ink, with the logo's violet for one short status line.
+   On paper and cream sections, type stays teal. */
 @theme {
   --color-ground: #031f24;
   --color-teal: #042c33;
@@ -20,11 +20,8 @@
   --color-ink-sub: #4d6a6f;
   --color-amber: #eaa652;
   --color-apricot: #ffcc99;
-  --color-violet-deep: #10014a;
+  --color-mist: #cfdcd9;
   --color-violet: #2f02ac;
-  --color-violet-line: #2c1a7a;
-  --color-lilac: #c9c2ea;
-  --color-lilac-ink: #f4f0ff;
 
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
 }

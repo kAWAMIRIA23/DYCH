@@ -31,7 +31,7 @@ export function Trust() {
 
         <dl className="mt-14 grid gap-10 sm:grid-cols-3">
           {points.map((p) => (
-            <div key={p.title} className="border-t-2 border-ink pt-5">
+            <div key={p.title} className="border-t-4 border-amber pt-5">
               <dt className="text-xl font-extrabold text-ink">{p.title}</dt>
               <dd className="mt-2 max-w-[36ch] leading-relaxed text-ink-body">{p.description}</dd>
             </div>
