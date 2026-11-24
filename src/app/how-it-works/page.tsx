@@ -85,7 +85,7 @@ export default function HowItWorksPage() {
         </p>
         <nav aria-label="Parts" className="flex flex-wrap gap-2.5 pt-3">
           {parts.map((p, i) => (
-            <a key={p.id} href={`#${p.id}`} className="rounded-lg border-[1.5px] border-mist px-4 py-2 font-semibold text-cream hover:border-apricot">
+            <a key={p.id} href={`#${p.id}`} className="btn border-mist px-4 py-2 text-cream hover:border-apricot">
               <span className="text-amber">{i + 1}</span> {p.name}
             </a>
           ))}

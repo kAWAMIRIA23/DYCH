@@ -64,7 +64,7 @@ export default function PricingPage() {
                 ))}
               </ul>
               <div className="mt-auto flex flex-wrap items-center gap-5 pt-8">
-                <Link href="/contact" className="rounded-lg bg-teal px-5 py-3 font-semibold text-cream hover:bg-teal-raised">
+                <Link href="/contact" className="btn border-white bg-teal text-cream hover:bg-teal-raised">
                   Book a site visit
                 </Link>
                 <a href="#why-no-price" className="font-semibold underline decoration-2 underline-offset-4">

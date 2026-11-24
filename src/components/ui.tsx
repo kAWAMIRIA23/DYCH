@@ -37,15 +37,15 @@ export function Section({
 
 type ButtonKind = "primary" | "dark" | "outline-light" | "outline-dark";
 const buttons: Record<ButtonKind, string> = {
-  primary: "bg-apricot text-teal hover:bg-cream",
-  dark: "bg-teal text-cream hover:bg-teal-raised",
-  "outline-light": "border-[1.5px] border-mist text-cream hover:border-apricot",
-  "outline-dark": "border-[1.5px] border-ink text-ink hover:bg-ink hover:text-cream",
+  primary: "border-white bg-apricot text-teal hover:bg-cream",
+  dark: "border-white bg-teal text-cream hover:bg-teal-raised",
+  "outline-light": "border-mist text-cream hover:border-apricot hover:text-apricot",
+  "outline-dark": "border-ink text-ink hover:bg-ink hover:text-cream",
 };
 
 export function Button({ href, kind = "primary", children }: { href: string; kind?: ButtonKind; children: ReactNode }) {
   return (
-    <Link href={href} className={`inline-block rounded-lg px-6 py-4 font-semibold ${buttons[kind]}`}>
+    <Link href={href} className={`btn ${buttons[kind]}`}>
       {children}
     </Link>
   );

@@ -87,7 +87,7 @@ export function ContactForm() {
         <textarea id="message" name="message" rows={5} required aria-describedby="message-hint" className={field} />
       </div>
 
-      <button type="submit" className="w-full rounded-lg bg-teal px-6 py-4 font-semibold text-cream hover:bg-teal-raised">
+      <button type="submit" className="btn w-full border-white bg-teal py-4 text-cream hover:bg-teal-raised">
         Send message
       </button>
       <p className="text-sm text-ink-sub" aria-live="polite">

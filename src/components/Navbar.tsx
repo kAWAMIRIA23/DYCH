@@ -107,7 +107,7 @@ export function Navbar() {
 
         <Link
           href="/contact"
-          className="hidden rounded-lg bg-apricot px-4 py-2.5 text-[15px] font-semibold text-teal hover:bg-cream lg:inline-block"
+          className="btn hidden border-white bg-apricot px-5 py-2 text-[15px] text-teal hover:bg-cream lg:inline-flex"
         >
           Book a Demo
         </Link>
@@ -142,7 +142,7 @@ export function Navbar() {
               </Link>
             ),
           )}
-          <Link href="/contact" className="mt-5 block rounded-lg bg-apricot px-5 py-3.5 text-center font-semibold text-teal">
+          <Link href="/contact" className="btn mt-5 flex w-full border-white bg-apricot text-teal">
             Book a Demo
           </Link>
         </div>

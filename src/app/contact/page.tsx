@@ -27,7 +27,7 @@ export default function ContactPage() {
             <p className="mt-2 leading-relaxed text-ink-body">
               It is the quickest way to reach us, and you will get a person rather than a ticket number.
             </p>
-            <a href={CONTACT.whatsapp.href} className="mt-4 inline-block rounded-lg bg-teal px-5 py-3 font-semibold text-cream hover:bg-teal-raised">
+            <a href={CONTACT.whatsapp.href} className="btn mt-4 border-white bg-teal text-cream hover:bg-teal-raised">
               {CONTACT.whatsapp.display}
             </a>
           </div>

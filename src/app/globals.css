@@ -41,6 +41,25 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* One button shape everywhere: nearly square corners, a 2px outline and a
+   medium-weight label. Each button picks its own fill and outline colour. */
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 4px;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.005em;
+  text-align: center;
+  transition: background-color 150ms, border-color 150ms, color 150ms;
+}
+
 /* Every heading is set in the display face. Weights and sizes stay with
    each component; this only chooses the family and keeps lines balanced. */
 @layer base {

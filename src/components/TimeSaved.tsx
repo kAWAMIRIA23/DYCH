@@ -46,7 +46,7 @@ function Choice({
             type="button"
             aria-pressed={o === value}
             onClick={() => onChange(o)}
-            className={`rounded-lg border-[1.5px] px-4 py-2 font-semibold tabular-nums ${
+            className={`btn px-4 py-2 tabular-nums ${
               o === value ? "border-teal bg-teal text-cream" : "border-ink/30 text-ink hover:border-ink"
             }`}
           >

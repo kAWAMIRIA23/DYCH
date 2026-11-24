@@ -35,12 +35,12 @@ export function Hero() {
             anyone the system does not know.
           </p>
           <div className="mt-7 flex flex-wrap gap-3.5">
-            <Link href="/contact" className="rounded bg-cream px-6 py-4 font-semibold text-teal hover:bg-white">
+            <Link href="/contact" className="btn border-white bg-cream text-teal hover:bg-white">
               Book a Demo
             </Link>
             <Link
               href="/how-it-works"
-              className="rounded border-[1.5px] border-cream px-6 py-4 font-semibold text-cream hover:bg-cream/10"
+              className="btn border-cream text-cream hover:bg-cream/10"
             >
               See How It Works
             </Link>
