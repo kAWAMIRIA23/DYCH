@@ -24,7 +24,7 @@ export function Hero() {
       </div>
 
       <div className="mx-auto mt-auto grid w-full max-w-7xl gap-10 px-4 pb-12 pt-36 sm:px-6 md:grid-cols-[1.4fr_1fr] md:items-end lg:px-16 lg:pb-14">
-        <h1 className="text-[clamp(3.2rem,8.4vw,8.5rem)] font-black leading-[0.88] tracking-[-0.045em]">
+        <h1 className="text-[clamp(3.2rem,8.4vw,8.5rem)] font-black text-apricot leading-[0.88] tracking-[-0.045em]">
           Safe in.
           <br />
           Safe out.

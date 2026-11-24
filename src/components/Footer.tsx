@@ -33,7 +33,7 @@ export function Footer() {
     <footer id="contact" className="scroll-mt-18 bg-ground text-cream">
       <div className="mx-auto grid max-w-7xl gap-14 px-4 py-20 sm:px-6 sm:py-28 md:grid-cols-[1fr_1.1fr] lg:gap-24 lg:px-16">
         <div>
-          <h2 className="max-w-[14ch] text-[clamp(2.2rem,4.2vw,3.6rem)] font-extrabold leading-[1.02] tracking-[-0.03em]">
+          <h2 className="max-w-[14ch] text-[clamp(2.2rem,4.2vw,3.6rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-apricot">
             See it working at your gate.
           </h2>
           <p className="mt-6 max-w-[42ch] text-lg leading-relaxed text-cream-soft">

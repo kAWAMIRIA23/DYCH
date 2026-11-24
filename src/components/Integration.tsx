@@ -22,7 +22,7 @@ export function Integration() {
     <section id="how-it-works" className="scroll-mt-18 bg-teal py-20 text-cream sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-16">
         <div className="grid gap-6 md:grid-cols-[1.2fr_1fr] md:items-end">
-          <h2 className="max-w-[16ch] text-[clamp(2.2rem,4.2vw,3.6rem)] font-extrabold leading-[1.02] tracking-[-0.03em]">
+          <h2 className="max-w-[16ch] text-[clamp(2.2rem,4.2vw,3.6rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-apricot">
             From the gate to the parent&apos;s phone, automatically.
           </h2>
           <p className="max-w-[44ch] text-lg leading-relaxed text-cream-soft">
