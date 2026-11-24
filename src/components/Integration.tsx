@@ -26,7 +26,7 @@ export function Integration() {
             From the gate to the parent&apos;s phone, automatically.
           </h2>
           <p className="max-w-[44ch] text-lg leading-relaxed text-cream-soft">
-            Each arrival moves through the same four steps automatically. Nobody on your staff
+            Each arrival moves through the same four steps. Nobody on your staff
             has to do anything.
           </p>
         </div>
