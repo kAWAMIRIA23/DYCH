@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <Link href="/" className="flex items-center gap-2.5">
             <Image src="/images/dych-icon.png" alt="" width={32} height={32} className="rounded-full" />
-            <span className="text-[17px] font-extrabold tracking-tight">DYCH Technologies</span>
+            <span className="font-display text-[18px] font-semibold tracking-tight">DYCH Technologies</span>
           </Link>
           <p className="mt-5 max-w-[34ch] text-[15px] leading-relaxed text-mist">
             Facial-recognition entry, automatic attendance and real-time alerts, for schools and for business across
@@ -20,7 +20,7 @@ export function Footer() {
 
         {FOOTER_NAV.map((group) => (
           <nav key={group.heading} aria-label={group.heading}>
-            <h2 className="font-extrabold text-apricot">{group.heading}</h2>
+            <h2 className="font-semibold text-apricot">{group.heading}</h2>
             <ul className="mt-4 space-y-2.5">
               {group.links.map((l) => (
                 <li key={l.href}>
@@ -34,7 +34,7 @@ export function Footer() {
         ))}
 
         <div>
-          <h2 className="font-extrabold text-apricot">Talk to us</h2>
+          <h2 className="font-semibold text-apricot">Talk to us</h2>
           <ul className="mt-4 space-y-2.5 text-[15px]">
             <li>
               <a href={CONTACT.whatsapp.href} className="text-mist hover:text-cream">

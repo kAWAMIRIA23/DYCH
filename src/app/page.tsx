@@ -72,7 +72,7 @@ export default function Home() {
         <dl className="mt-14 border-t border-ink/20">
           {problems.map(([p, a]) => (
             <div key={p} className="grid gap-2 border-b border-ink/20 py-6 md:grid-cols-[1fr_1.4fr] md:gap-10">
-              <dt className="text-lg font-extrabold text-ink">{p}</dt>
+              <dt className="text-lg font-semibold text-ink">{p}</dt>
               <dd className="leading-relaxed text-ink-body">{a}</dd>
             </div>
           ))}
@@ -105,9 +105,9 @@ export default function Home() {
                     <j.icon className="h-5 w-5 text-teal" />
                   </span>
                   <div>
-                    <h3 className="text-2xl font-extrabold tracking-tight text-ink">{j.title}</h3>
+                    <h3 className="text-2xl font-semibold tracking-tight text-ink">{j.title}</h3>
                     <p className="mt-2 max-w-[52ch] text-[17px] leading-relaxed text-ink-body">{j.text}</p>
-                    <Link href={j.href} className="mt-3 inline-block font-bold text-ink underline decoration-amber decoration-2 underline-offset-4">
+                    <Link href={j.href} className="mt-3 inline-block font-semibold text-ink underline decoration-amber decoration-2 underline-offset-4">
                       Read more
                     </Link>
                   </div>
@@ -153,10 +153,10 @@ export default function Home() {
         <ol className="mt-14 grid gap-px overflow-hidden rounded-[14px] border border-ink/15 bg-ink/15 sm:grid-cols-2 lg:grid-cols-4">
           {pipeline.map((s, i) => (
             <li key={s.title} className="bg-paper p-7">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber font-extrabold tabular-nums text-teal">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber font-semibold tabular-nums text-teal">
                 {i + 1}
               </span>
-              <h3 className="mt-5 text-xl font-extrabold text-ink">{s.title}</h3>
+              <h3 className="mt-5 text-xl font-semibold text-ink">{s.title}</h3>
               <p className="mt-2 leading-relaxed text-ink-body">{s.text}</p>
             </li>
           ))}
@@ -169,7 +169,7 @@ export default function Home() {
       </Section>
 
       <Section tone="cream">
-        <p className="mb-4 font-bold text-ink-sub">The arithmetic</p>
+        <p className="mb-4 font-semibold text-ink-sub">The arithmetic</p>
         <SectionIntro title="How much of the day the entrance is taking.">
           <Lede>
             A manual register or a sign-in book costs a few seconds per person, every single morning. Put your own two
@@ -194,14 +194,14 @@ export default function Home() {
             </Lede>
             <dl className="mt-10 grid gap-8 sm:grid-cols-2">
               <div className="border-t-4 border-amber pt-5">
-                <dt className="text-xl font-extrabold">Offline first</dt>
+                <dt className="text-xl font-semibold">Offline first</dt>
                 <dd className="mt-2 leading-relaxed text-mist">
                   The gate keeps reading and the register keeps writing when the line drops. Everything syncs once
                   connectivity returns.
                 </dd>
               </div>
               <div className="border-t-4 border-amber pt-5">
-                <dt className="text-xl font-extrabold">On the phone parents already own</dt>
+                <dt className="text-xl font-semibold">On the phone parents already own</dt>
                 <dd className="mt-2 leading-relaxed text-mist">
                   A push notification reaches a parent on the school’s own timing. Where there is no smartphone, the same
                   alert falls back to SMS, so no family is left out.
@@ -212,12 +212,12 @@ export default function Home() {
           <div className="space-y-8">
             <CirclePhoto src="/images/phone.jpg" alt="A parent's phone showing a check-in notification" ratio="aspect-[4/5]" />
             <div className="relative rounded-[14px] bg-cream p-7 text-ink">
-              <p className="text-xl font-extrabold">All face data is matched and encrypted on-device. No photos ever leave the school.</p>
+              <p className="text-xl font-semibold">All face data is matched and encrypted on-device. No photos ever leave the school.</p>
               <p className="mt-3 leading-relaxed text-ink-body">
                 Recognition runs on a unit at your site, not on a server elsewhere. That is why the gate survives an
                 outage, and why there is nothing to upload in the first place.
               </p>
-              <Link href="/security-and-trust" className="mt-4 inline-block font-bold text-violet underline underline-offset-4">
+              <Link href="/security-and-trust" className="mt-4 inline-block font-semibold text-violet underline underline-offset-4">
                 How we handle children’s data
               </Link>
             </div>

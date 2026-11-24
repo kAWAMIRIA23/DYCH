@@ -47,7 +47,7 @@ export default function ProductPage() {
           the record that scan produces, and tells the person who needs to know. A school uses it at a gate and a
           workplace uses it at a reception desk, but underneath it is the same three things doing the same job.
         </p>
-        <ul className="flex flex-wrap gap-x-6 gap-y-2 pt-2 font-extrabold text-apricot">
+        <ul className="flex flex-wrap gap-x-6 gap-y-2 pt-2 font-semibold text-apricot">
           <li>Vision</li>
           <li>Safety</li>
           <li>Accountability</li>
@@ -58,11 +58,11 @@ export default function ProductPage() {
         <ol className="grid gap-10 md:grid-cols-3">
           {steps.map((s, i) => (
             <li key={s.title} className="border-t-4 border-amber pt-5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber font-extrabold text-teal">{i + 1}</span>
-              <h2 className="mt-5 text-2xl font-extrabold leading-tight tracking-tight text-ink">{s.title}</h2>
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber font-semibold text-teal">{i + 1}</span>
+              <h2 className="mt-5 text-2xl font-semibold leading-tight tracking-tight text-ink">{s.title}</h2>
               <p className="mt-3 leading-relaxed text-ink-body">{s.text}</p>
               {s.link && (
-                <Link href={s.link.href} className="mt-4 inline-block font-bold text-ink underline decoration-amber decoration-2 underline-offset-4">
+                <Link href={s.link.href} className="mt-4 inline-block font-semibold text-ink underline decoration-amber decoration-2 underline-offset-4">
                   {s.link.label}
                 </Link>
               )}
@@ -72,13 +72,13 @@ export default function ProductPage() {
 
         <div className="mt-16 grid gap-6 rounded-[14px] bg-teal p-7 text-cream sm:grid-cols-3 sm:p-9">
           <p className="text-mist sm:col-span-3">Illustrative camera view, not a product screenshot.</p>
-          <p><span className="font-extrabold text-apricot">ID 4471</span> · <span className="font-extrabold text-apricot">ID 2208</span> · <span className="font-extrabold text-amber">UNMATCHED</span></p>
+          <p><span className="font-semibold text-apricot">ID 4471</span> · <span className="font-semibold text-apricot">ID 2208</span> · <span className="font-semibold text-amber">UNMATCHED</span></p>
           <div>
-            <p className="font-extrabold">Matched</p>
+            <p className="font-semibold">Matched</p>
             <p className="text-mist">Known, enrolled identity</p>
           </div>
           <div>
-            <p className="font-extrabold">Unmatched</p>
+            <p className="font-semibold">Unmatched</p>
             <p className="text-mist">Flagged for a person to check</p>
           </div>
         </div>

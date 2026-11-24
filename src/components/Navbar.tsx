@@ -56,7 +56,7 @@ export function Navbar() {
       <nav className="mx-auto flex h-18 max-w-7xl items-center gap-6 px-4 sm:px-6 lg:px-16" aria-label="Main">
         <Link href="/" className="mr-auto flex items-center gap-2.5 text-cream">
           <Image src="/images/dych-icon.png" alt="" width={36} height={36} className="rounded-full" />
-          <span className="text-[17px] font-extrabold tracking-tight">DYCH Technologies</span>
+          <span className="font-display text-[18px] font-semibold tracking-tight">DYCH Technologies</span>
         </Link>
 
         <ul className="hidden items-center gap-6 lg:flex">
@@ -83,7 +83,7 @@ export function Navbar() {
                           onClick={() => setMenu(null)}
                           className="block rounded-lg px-4 py-3 hover:bg-paper"
                         >
-                          <span className="block font-extrabold">{m.label}</span>
+                          <span className="block font-semibold">{m.label}</span>
                           <span className="block text-sm text-ink-sub">{m.note}</span>
                         </Link>
                       </li>
@@ -107,7 +107,7 @@ export function Navbar() {
 
         <Link
           href="/contact"
-          className="hidden rounded-lg bg-apricot px-4 py-2.5 text-[15px] font-extrabold text-teal hover:bg-cream lg:inline-block"
+          className="hidden rounded-lg bg-apricot px-4 py-2.5 text-[15px] font-semibold text-teal hover:bg-cream lg:inline-block"
         >
           Book a Demo
         </Link>
@@ -142,7 +142,7 @@ export function Navbar() {
               </Link>
             ),
           )}
-          <Link href="/contact" className="mt-5 block rounded-lg bg-apricot px-5 py-3.5 text-center font-extrabold text-teal">
+          <Link href="/contact" className="mt-5 block rounded-lg bg-apricot px-5 py-3.5 text-center font-semibold text-teal">
             Book a Demo
           </Link>
         </div>

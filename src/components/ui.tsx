@@ -45,7 +45,7 @@ const buttons: Record<ButtonKind, string> = {
 
 export function Button({ href, kind = "primary", children }: { href: string; kind?: ButtonKind; children: ReactNode }) {
   return (
-    <Link href={href} className={`inline-block rounded-lg px-6 py-4 font-extrabold ${buttons[kind]}`}>
+    <Link href={href} className={`inline-block rounded-lg px-6 py-4 font-semibold ${buttons[kind]}`}>
       {children}
     </Link>
   );
@@ -67,7 +67,7 @@ export function TextLink({ href, tone = "light", children }: { href: string; ton
 export function H2({ children, tone = "light", className = "" }: { children: ReactNode; tone?: Tone; className?: string }) {
   return (
     <h2
-      className={`text-balance text-[clamp(2.1rem,4.2vw,3.5rem)] font-extrabold leading-[1.03] tracking-[-0.03em] ${
+      className={`text-balance text-[clamp(2.1rem,4.2vw,3.5rem)] font-semibold leading-[1.03] tracking-[-0.03em] ${
         tone === "dark" ? "text-cream" : "text-ink"
       } ${className}`}
     >
@@ -110,7 +110,7 @@ export function PageHeader({
     <section className="relative overflow-hidden bg-teal pb-20 pt-36 text-cream sm:pb-28 sm:pt-44">
       <Container className={`grid gap-14 ${image ? "md:grid-cols-[1.15fr_0.85fr] md:items-center" : ""}`}>
         <div className="min-w-0">
-          <h1 className="max-w-[16ch] text-balance text-[clamp(2.6rem,5.8vw,5.2rem)] font-extrabold leading-[1] tracking-[-0.035em] text-cream">
+          <h1 className="max-w-[16ch] text-balance text-[clamp(2.6rem,5.8vw,5.2rem)] font-semibold leading-[1] tracking-[-0.03em] text-cream">
             {title}
           </h1>
           {children && <div className="mt-7 max-w-[56ch] space-y-4 text-lg leading-relaxed text-mist">{children}</div>}
@@ -151,7 +151,7 @@ export function Details({
     <dl className={`grid gap-x-10 gap-y-9 ${grid}`}>
       {items.map((it, i) => (
         <div key={i} className={`border-t-4 pt-5 ${tone === "dark" ? "border-amber" : "border-amber"}`}>
-          <dt className={`text-xl font-extrabold tracking-tight ${tone === "dark" ? "text-cream" : "text-ink"}`}>{it.title}</dt>
+          <dt className={`text-xl font-semibold tracking-tight ${tone === "dark" ? "text-cream" : "text-ink"}`}>{it.title}</dt>
           <dd className={`mt-2 leading-relaxed ${tone === "dark" ? "text-mist" : "text-ink-body"}`}>{it.text}</dd>
         </div>
       ))}
@@ -173,10 +173,10 @@ export function CreamCards({
       {items.map((it, i) => (
         <li key={i} className="flex flex-col rounded-[14px] bg-cream p-7 text-ink">
           {it.label && <span className="text-sm font-semibold text-violet">{it.label}</span>}
-          <h3 className={`text-xl font-extrabold tracking-tight ${it.label ? "mt-5" : ""}`}>{it.title}</h3>
+          <h3 className={`text-xl font-semibold tracking-tight ${it.label ? "mt-5" : ""}`}>{it.title}</h3>
           <p className="mt-2 leading-relaxed text-ink-body">{it.text}</p>
           {it.link && (
-            <Link href={it.link.href} className="mt-auto pt-5 text-sm font-bold text-violet underline underline-offset-4">
+            <Link href={it.link.href} className="mt-auto pt-5 text-sm font-semibold text-violet underline underline-offset-4">
               {it.link.label}
             </Link>
           )}

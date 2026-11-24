@@ -59,8 +59,8 @@ export default function SecurityPage() {
         <ol className="mt-14 grid gap-4 md:grid-cols-3">
           {enrolment.map((s, i) => (
             <li key={s.title} className="rounded-[14px] bg-cream p-7 text-ink">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-amber font-extrabold text-teal">{i + 1}</span>
-              <h3 className="mt-5 text-xl font-extrabold">{s.title}</h3>
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-amber font-semibold text-teal">{i + 1}</span>
+              <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
               <p className="mt-2 leading-relaxed text-ink-body">{s.text}</p>
             </li>
           ))}
@@ -178,7 +178,7 @@ export default function SecurityPage() {
         <ol className="mt-14 border-t border-ink/20">
           {questions.map((q, i) => (
             <li key={q} className="grid grid-cols-[3.5rem_1fr] items-baseline border-b border-ink/20 py-6">
-              <span className="text-2xl font-extrabold tabular-nums text-ink-sub">{String(i + 1).padStart(2, "0")}</span>
+              <span className="text-2xl font-semibold tabular-nums text-ink-sub">{String(i + 1).padStart(2, "0")}</span>
               <p className="text-lg font-semibold leading-snug text-ink">{q}</p>
             </li>
           ))}

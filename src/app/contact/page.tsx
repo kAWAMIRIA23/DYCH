@@ -14,7 +14,7 @@ export default function ContactPage() {
       />
       <Container className="relative grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
         <div className="min-w-0">
-          <h1 className="max-w-[14ch] text-[clamp(2.6rem,5.8vw,5.2rem)] font-extrabold leading-none tracking-[-0.035em]">
+          <h1 className="max-w-[14ch] text-[clamp(2.6rem,5.8vw,5.2rem)] font-semibold leading-none tracking-[-0.035em]">
             Talk to the team in Kampala.
           </h1>
           <p className="mt-7 max-w-[50ch] text-lg leading-relaxed text-mist">
@@ -23,18 +23,18 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-12 rounded-[14px] bg-cream p-7 text-ink">
-            <h2 className="text-xl font-extrabold">Prefer WhatsApp?</h2>
+            <h2 className="text-xl font-semibold">Prefer WhatsApp?</h2>
             <p className="mt-2 leading-relaxed text-ink-body">
               It is the quickest way to reach us, and you will get a person rather than a ticket number.
             </p>
-            <a href={CONTACT.whatsapp.href} className="mt-4 inline-block rounded-lg bg-teal px-5 py-3 font-extrabold text-cream hover:bg-teal-raised">
+            <a href={CONTACT.whatsapp.href} className="mt-4 inline-block rounded-lg bg-teal px-5 py-3 font-semibold text-cream hover:bg-teal-raised">
               {CONTACT.whatsapp.display}
             </a>
           </div>
 
           <dl className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
             <div>
-              <dt className="font-extrabold text-apricot">Call the team</dt>
+              <dt className="font-semibold text-apricot">Call the team</dt>
               {CONTACT.phones.map((p) => (
                 <dd key={p.href}>
                   <a href={p.href} className="text-mist hover:text-cream">
@@ -44,7 +44,7 @@ export default function ContactPage() {
               ))}
             </div>
             <div>
-              <dt className="font-extrabold text-apricot">Email</dt>
+              <dt className="font-semibold text-apricot">Email</dt>
               <dd>
                 <a href={`mailto:${CONTACT.email}`} className="text-mist hover:text-cream">
                   {CONTACT.email}
@@ -52,7 +52,7 @@ export default function ContactPage() {
               </dd>
             </div>
             <div>
-              <dt className="font-extrabold text-apricot">Where we are</dt>
+              <dt className="font-semibold text-apricot">Where we are</dt>
               <dd className="text-mist">{CONTACT.location}</dd>
             </div>
           </dl>

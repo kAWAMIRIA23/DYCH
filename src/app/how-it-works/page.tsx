@@ -85,7 +85,7 @@ export default function HowItWorksPage() {
         </p>
         <nav aria-label="Parts" className="flex flex-wrap gap-2.5 pt-3">
           {parts.map((p, i) => (
-            <a key={p.id} href={`#${p.id}`} className="rounded-lg border-[1.5px] border-mist px-4 py-2 font-bold text-cream hover:border-apricot">
+            <a key={p.id} href={`#${p.id}`} className="rounded-lg border-[1.5px] border-mist px-4 py-2 font-semibold text-cream hover:border-apricot">
               <span className="text-amber">{i + 1}</span> {p.name}
             </a>
           ))}
@@ -96,7 +96,7 @@ export default function HowItWorksPage() {
         <Section key={p.id} id={p.id} tone={p.tone}>
           <div className={`grid gap-12 ${p.image ? "md:grid-cols-[1.1fr_0.9fr] md:items-center lg:gap-20" : ""}`}>
             <div className="min-w-0">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-amber text-lg font-extrabold text-teal">{i + 1}</span>
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-amber text-lg font-semibold text-teal">{i + 1}</span>
               <H2 tone={p.tone} className="mt-6">
                 {p.name}
               </H2>
@@ -154,7 +154,7 @@ export default function HowItWorksPage() {
           {stages.map((s, i) => (
             <li key={s.title} className="rounded-[14px] bg-teal p-7 text-cream">
               <span className="text-sm font-semibold text-apricot">Stage {i + 1}</span>
-              <h3 className="mt-5 text-xl font-extrabold">{s.title}</h3>
+              <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
               <p className="mt-2 leading-relaxed text-mist">{s.text}</p>
             </li>
           ))}

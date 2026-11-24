@@ -51,8 +51,8 @@ export default function PricingPage() {
               className={`flex flex-col rounded-[14px] p-8 ${p.badge ? "bg-apricot text-teal" : "bg-cream text-ink"}`}
             >
               <div className="flex items-center justify-between gap-4">
-                <h2 className="text-2xl font-extrabold">{p.name}</h2>
-                {p.badge && <span className="rounded-lg bg-teal px-3 py-1 text-sm font-bold text-apricot">{p.badge}</span>}
+                <h2 className="text-2xl font-semibold">{p.name}</h2>
+                {p.badge && <span className="rounded-lg bg-teal px-3 py-1 text-sm font-semibold text-apricot">{p.badge}</span>}
               </div>
               <p className="mt-3 leading-relaxed text-ink-body">{p.text}</p>
               <ul className="mt-6 space-y-3 border-t border-ink/15 pt-6">
@@ -64,10 +64,10 @@ export default function PricingPage() {
                 ))}
               </ul>
               <div className="mt-auto flex flex-wrap items-center gap-5 pt-8">
-                <Link href="/contact" className="rounded-lg bg-teal px-5 py-3 font-extrabold text-cream hover:bg-teal-raised">
+                <Link href="/contact" className="rounded-lg bg-teal px-5 py-3 font-semibold text-cream hover:bg-teal-raised">
                   Book a site visit
                 </Link>
-                <a href="#why-no-price" className="font-bold underline decoration-2 underline-offset-4">
+                <a href="#why-no-price" className="font-semibold underline decoration-2 underline-offset-4">
                   Why no price?
                 </a>
               </div>
@@ -99,7 +99,7 @@ export default function PricingPage() {
         <div className="mt-12 border-t border-ink/20">
           {faqs.map((f) => (
             <details key={f.q} className="group border-b border-ink/20">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-xl font-extrabold text-ink">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-xl font-semibold text-ink">
                 {f.q}
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber text-lg text-teal transition-transform group-open:rotate-45" aria-hidden="true">
                   +

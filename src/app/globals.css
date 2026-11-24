@@ -23,7 +23,8 @@
   --color-mist: #cfdcd9;
   --color-violet: #2f02ac;
 
-  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
@@ -34,6 +35,21 @@ body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  /* Inter's alternates: single-storey a off, open digits, a straight-legged
+     l so 1, l and I never get confused in phone numbers. */
+  font-feature-settings: "cv11", "ss01", "ss03";
+  text-rendering: optimizeLegibility;
+}
+
+/* Every heading is set in the display face. Weights and sizes stay with
+   each component; this only chooses the family and keeps lines balanced. */
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
 }
 
 :focus-visible {

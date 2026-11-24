@@ -20,7 +20,7 @@ export function Hero() {
       </div>
 
       <div className="mx-auto mt-auto grid w-full max-w-7xl gap-10 px-4 pb-12 pt-36 sm:px-6 md:grid-cols-[1.4fr_1fr] md:items-end lg:px-16 lg:pb-14">
-        <h1 className="text-[clamp(2.6rem,5.4vw,5.4rem)] font-black leading-[0.92] tracking-[-0.045em] text-apricot">
+        <h1 className="text-[clamp(2.6rem,5.4vw,5.4rem)] font-semibold leading-[0.98] tracking-[-0.035em] text-apricot">
           <span className="sr-only">DYCH Technologies. </span>
           Know who is on
           <br />
@@ -35,12 +35,12 @@ export function Hero() {
             anyone the system does not know.
           </p>
           <div className="mt-7 flex flex-wrap gap-3.5">
-            <Link href="/contact" className="rounded bg-cream px-6 py-4 font-extrabold text-teal hover:bg-white">
+            <Link href="/contact" className="rounded bg-cream px-6 py-4 font-semibold text-teal hover:bg-white">
               Book a Demo
             </Link>
             <Link
               href="/how-it-works"
-              className="rounded border-[1.5px] border-cream px-6 py-4 font-extrabold text-cream hover:bg-cream/10"
+              className="rounded border-[1.5px] border-cream px-6 py-4 font-semibold text-cream hover:bg-cream/10"
             >
               See How It Works
             </Link>

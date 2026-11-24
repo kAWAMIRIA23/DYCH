@@ -72,7 +72,7 @@ export default function AboutPage() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-[14px] border-[6px] border-teal bg-teal">
                 <Image src={t.image} alt={t.name} fill sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" className="object-cover object-top" />
               </div>
-              <p className="mt-4 text-xl font-extrabold text-ink">{t.name}</p>
+              <p className="mt-4 text-xl font-semibold text-ink">{t.name}</p>
               <p className="text-ink-body">{t.role}</p>
             </li>
           ))}
@@ -83,7 +83,7 @@ export default function AboutPage() {
         <div className="grid gap-10 md:grid-cols-[1fr_1.3fr] md:gap-16">
           <div>
             <H2>Where we operate</H2>
-            <p className="mt-6 text-xl font-extrabold text-ink">Kampala, Uganda</p>
+            <p className="mt-6 text-xl font-semibold text-ink">Kampala, Uganda</p>
           </div>
           <div className="space-y-4">
             <Lede>
@@ -94,7 +94,7 @@ export default function AboutPage() {
               We are early, and the deployment list is short. That is on purpose for now: the people who built the
               system are the ones installing it, and there is a limit to how many gates that can cover well in a term.
             </Lede>
-            <Link href="/schools" className="inline-block font-bold text-ink underline decoration-amber decoration-2 underline-offset-4">
+            <Link href="/schools" className="inline-block font-semibold text-ink underline decoration-amber decoration-2 underline-offset-4">
               Where we are so far
             </Link>
           </div>

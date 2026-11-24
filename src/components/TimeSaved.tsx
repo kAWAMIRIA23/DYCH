@@ -33,8 +33,8 @@ function Choice({
   return (
     <fieldset className="border-t border-ink/20 pt-6">
       <div className="flex items-baseline justify-between gap-4">
-        <legend className="font-extrabold text-ink">{legend}</legend>
-        <span className="text-2xl font-extrabold tabular-nums text-ink">
+        <legend className="font-semibold text-ink">{legend}</legend>
+        <span className="font-display text-2xl font-semibold tabular-nums text-ink">
           {value.toLocaleString("en-GB")}
           {suffix}
         </span>
@@ -46,7 +46,7 @@ function Choice({
             type="button"
             aria-pressed={o === value}
             onClick={() => onChange(o)}
-            className={`rounded-lg border-[1.5px] px-4 py-2 font-bold tabular-nums ${
+            className={`rounded-lg border-[1.5px] px-4 py-2 font-semibold tabular-nums ${
               o === value ? "border-teal bg-teal text-cream" : "border-ink/30 text-ink hover:border-ink"
             }`}
           >
@@ -92,11 +92,11 @@ export function TimeSaved() {
         <dl className="mt-6 space-y-6">
           <div>
             <dt className="text-mist">Every day</dt>
-            <dd className="text-[clamp(2rem,4vw,2.8rem)] font-extrabold leading-tight tabular-nums">{format(day)}</dd>
+            <dd className="font-display text-[clamp(2rem,4vw,2.8rem)] font-semibold leading-tight tabular-nums">{format(day)}</dd>
           </div>
           <div className="border-t border-teal-line pt-6">
             <dt className="text-mist">Every week</dt>
-            <dd className="text-[clamp(2rem,4vw,2.8rem)] font-extrabold leading-tight tabular-nums">{format(week)}</dd>
+            <dd className="font-display text-[clamp(2rem,4vw,2.8rem)] font-semibold leading-tight tabular-nums">{format(week)}</dd>
           </div>
         </dl>
         <p className="mt-7 text-sm leading-relaxed text-mist">
@@ -104,7 +104,7 @@ export function TimeSaved() {
           DYCH Technologies. One scan per person per day. 5 school days a week. Departures, second entrances and
           visitors are not counted, so the real figure is higher.
         </p>
-        <Link href="/how-it-works" className="mt-5 inline-block font-bold text-apricot underline underline-offset-4">
+        <Link href="/how-it-works" className="mt-5 inline-block font-semibold text-apricot underline underline-offset-4">
           How does this work?
         </Link>
       </div>

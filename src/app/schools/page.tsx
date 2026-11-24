@@ -168,7 +168,7 @@ export default function SchoolsPage() {
         </Lede>
 
         <div className="mt-14 rounded-[14px] bg-cream p-7 text-ink sm:p-10">
-          <h3 className="max-w-[30ch] text-2xl font-extrabold leading-tight tracking-tight">
+          <h3 className="max-w-[30ch] text-2xl font-semibold leading-tight tracking-tight">
             The first deployment: one school, one gate, and a register that stopped eating the first lesson.
           </h3>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -186,8 +186,8 @@ export default function SchoolsPage() {
           <dl className="mt-8 grid gap-4 border-t border-ink/15 pt-6 sm:grid-cols-3">
             {["Students enrolled", "Time saved daily", "Attendance accuracy"].map((m) => (
               <div key={m}>
-                <dd className="text-3xl font-extrabold text-ink-sub">—</dd>
-                <dt className="mt-1 font-bold">{m}</dt>
+                <dd className="text-3xl font-semibold text-ink-sub">—</dd>
+                <dt className="mt-1 font-semibold">{m}</dt>
                 <dd className="text-sm text-ink-sub">Not yet reported</dd>
               </div>
             ))}
@@ -224,7 +224,7 @@ export default function SchoolsPage() {
               It also means we will tell you if your school is not a good fit. We can afford to, and we would rather not
               learn it after the cameras are up.
             </Lede>
-            <Link href="/contact" className="inline-block font-bold text-ink underline decoration-amber decoration-2 underline-offset-4">
+            <Link href="/contact" className="inline-block font-semibold text-ink underline decoration-amber decoration-2 underline-offset-4">
               Talk to the people who would install it
             </Link>
           </div>
