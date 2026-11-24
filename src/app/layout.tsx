@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Hanken_Grotesk } from "next/font/google";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 const hanken = Hanken_Grotesk({
@@ -9,9 +11,12 @@ const hanken = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Smart Vizion | DYCH Technologies",
+  title: {
+    default: "DYCH Technologies | Smart Vizion",
+    template: "%s | DYCH Technologies",
+  },
   description:
-    "Secure entry, automatic attendance and instant parent alerts for schools across Africa, from DYCH Technologies in Kampala.",
+    "Facial-recognition entry, automatic attendance and real-time alerts, for schools and for business across Uganda and the wider region.",
 };
 
 export default function RootLayout({
@@ -21,7 +26,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${hanken.variable} antialiased`}>{children}</body>
+      <body className={`${hanken.variable} antialiased`}>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-apricot focus:px-4 focus:py-2 focus:font-bold focus:text-teal"
+        >
+          Skip to content
+        </a>
+        <Navbar />
+        <main id="main">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

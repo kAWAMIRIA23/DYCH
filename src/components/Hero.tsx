@@ -1,14 +1,10 @@
 import Image from "next/image";
-
-const strip = [
-  { label: "Security", note: "Every entry point watched", href: "#solutions" },
-  { label: "Attendance", note: "The register fills itself in", href: "#solutions" },
-  { label: "Parents", note: "Told the minute their child arrives", href: "#solutions" },
-];
+import Link from "next/link";
+import { INDUSTRIES } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section id="top" className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-teal text-cream">
+    <section className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-teal text-cream">
       {/* The arrival photo, printed in the two brand inks: greyscale lifted
           through screen onto teal, then shaded so the copy stays readable. */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
@@ -24,43 +20,44 @@ export function Hero() {
       </div>
 
       <div className="mx-auto mt-auto grid w-full max-w-7xl gap-10 px-4 pb-12 pt-36 sm:px-6 md:grid-cols-[1.4fr_1fr] md:items-end lg:px-16 lg:pb-14">
-        <h1 className="text-[clamp(3.2rem,8.4vw,8.5rem)] font-black text-apricot leading-[0.88] tracking-[-0.045em]">
-          Safe in.
+        <h1 className="text-[clamp(2.6rem,5.4vw,5.4rem)] font-black leading-[0.92] tracking-[-0.045em] text-apricot">
+          <span className="sr-only">DYCH Technologies. </span>
+          Know who is on
           <br />
-          Safe out.
+          your premises
+          <br />
+          in real time.
         </h1>
         <div>
-          <p className="max-w-[40ch] text-lg leading-relaxed text-cream-soft sm:text-[19px]">
-            Smart Vizion watches your gate so your staff don&apos;t have to. It knows
-            every student, records when they arrive and leave, and tells parents straight away.
+          <p className="max-w-[44ch] text-lg leading-relaxed text-cream-soft">
+            Cards, PINs and paper registers are easy to share, forget or fake. Our system uses the face as the
+            credential: cameras recognise enrolled people as they walk in, mark presence automatically, and flag
+            anyone the system does not know.
           </p>
           <div className="mt-7 flex flex-wrap gap-3.5">
-            <a
-              href="#contact"
-              className="rounded bg-cream px-6 py-4 font-extrabold text-teal hover:bg-white"
-            >
-              Book a demo
-            </a>
-            <a
-              href="#how-it-works"
+            <Link href="/contact" className="rounded bg-cream px-6 py-4 font-extrabold text-teal hover:bg-white">
+              Book a Demo
+            </Link>
+            <Link
+              href="/how-it-works"
               className="rounded border-[1.5px] border-cream px-6 py-4 font-extrabold text-cream hover:bg-cream/10"
             >
-              See how it works
-            </a>
+              See How It Works
+            </Link>
           </div>
         </div>
       </div>
 
       <ul className="grid border-t border-cream/30 md:grid-cols-3">
-        {strip.map((s, i) => (
-          <li key={s.label} className={i > 0 ? "border-t border-cream/30 md:border-l md:border-t-0" : ""}>
-            <a
+        {INDUSTRIES.map((s, i) => (
+          <li key={s.href} className={i > 0 ? "border-t border-cream/30 md:border-l md:border-t-0" : ""}>
+            <Link
               href={s.href}
               className="group flex items-baseline justify-between gap-4 px-4 py-5 hover:bg-cream sm:px-6 lg:px-16"
             >
               <span className="font-semibold group-hover:text-teal">{s.label}</span>
-              <span className="text-sm text-cream-soft group-hover:text-ink-sub">{s.note}</span>
-            </a>
+              <span className="text-right text-sm text-cream-soft group-hover:text-ink-sub">{s.note}</span>
+            </Link>
           </li>
         ))}
       </ul>

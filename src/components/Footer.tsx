@@ -1,126 +1,71 @@
-"use client";
-
-import { useState, type FormEvent } from "react";
 import Image from "next/image";
-
-const EMAIL = "xristeck@gmail.com";
-const PHONES = ["+256 767 870035", "+256 788 195067"];
-
-const field =
-  "w-full rounded-lg border border-teal-line bg-teal px-4 py-3 text-cream placeholder:text-mist/50 focus:border-amber focus:outline-none";
+import Link from "next/link";
+import { CONTACT, FOOTER_NAV } from "@/lib/site";
 
 export function Footer() {
-  const [opened, setOpened] = useState(false);
-
-  // There is no form backend yet, so the message is handed to the visitor's
-  // own email app, addressed to the team and already filled in.
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const subject = `Demo request from ${data.get("school") || data.get("name")}`;
-    const body = [
-      `Name: ${data.get("name")}`,
-      `School: ${data.get("school")}`,
-      `Email: ${data.get("email")}`,
-      "",
-      `${data.get("message")}`,
-    ].join("\n");
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setOpened(true);
-  }
-
   return (
-    <footer id="contact" className="scroll-mt-18 bg-ground text-cream">
-      <div className="mx-auto grid max-w-7xl gap-14 px-4 py-20 sm:px-6 sm:py-28 md:grid-cols-[1fr_1.1fr] lg:gap-24 lg:px-16">
+    <footer className="bg-ground text-cream">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-[1.3fr_repeat(3,1fr)_1.2fr] lg:px-16">
         <div>
-          <h2 className="max-w-[14ch] text-[clamp(2.2rem,4.2vw,3.6rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-cream">
-            See it working at your gate.
-          </h2>
-          <p className="mt-6 max-w-[42ch] text-lg leading-relaxed text-mist">
-            Tell us about your school and we will arrange a demonstration on site or online.
+          <Link href="/" className="flex items-center gap-2.5">
+            <Image src="/images/dych-icon.png" alt="" width={32} height={32} className="rounded-full" />
+            <span className="text-[17px] font-extrabold tracking-tight">DYCH Technologies</span>
+          </Link>
+          <p className="mt-5 max-w-[34ch] text-[15px] leading-relaxed text-mist">
+            Facial-recognition entry, automatic attendance and real-time alerts, for schools and for business across
+            Uganda and the wider region.
           </p>
-
-          <dl className="mt-12 space-y-7">
-            <div>
-              <dt className="text-sm text-mist">Call us</dt>
-              {PHONES.map((p) => (
-                <dd key={p}>
-                  <a href={`tel:${p.replace(/\s/g, "")}`} className="text-xl font-semibold hover:text-apricot">
-                    {p}
-                  </a>
-                </dd>
-              ))}
-            </div>
-            <div>
-              <dt className="text-sm text-mist">Email us</dt>
-              <dd>
-                <a href={`mailto:${EMAIL}`} className="text-xl font-semibold hover:text-apricot">
-                  {EMAIL}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-sm text-mist">Visit us</dt>
-              <dd className="text-xl font-semibold">Kampala, Uganda</dd>
-            </div>
-          </dl>
+          <p className="mt-4 text-[15px] text-mist">{CONTACT.location}</p>
         </div>
 
-        <form onSubmit={onSubmit} className="space-y-5 rounded-[14px] border border-teal-line bg-teal-raised p-6 sm:p-8">
-          <div className="grid gap-5 sm:grid-cols-2">
-            <div>
-              <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-mist">
-                Your name
-              </label>
-              <input id="name" name="name" required autoComplete="name" className={field} />
-            </div>
-            <div>
-              <label htmlFor="school" className="mb-1.5 block text-sm font-medium text-mist">
-                School
-              </label>
-              <input id="school" name="school" required autoComplete="organization" className={field} />
-            </div>
-          </div>
-          <div>
-            <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-mist">
-              Email
-            </label>
-            <input id="email" name="email" type="email" required autoComplete="email" className={field} />
-          </div>
-          <div>
-            <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-mist">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              className={field}
-              placeholder="Number of students, number of gates, anything else we should know"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full rounded-lg bg-apricot px-6 py-4 font-extrabold text-teal hover:bg-cream"
-          >
-            Request a demo
-          </button>
-          <p className="text-sm text-mist" aria-live="polite">
-            {opened
-              ? `Your email app should now be open with the message ready. If it did not open, write to ${EMAIL}.`
-              : "This opens your email app with the message filled in."}
-          </p>
-        </form>
+        {FOOTER_NAV.map((group) => (
+          <nav key={group.heading} aria-label={group.heading}>
+            <h2 className="font-extrabold text-apricot">{group.heading}</h2>
+            <ul className="mt-4 space-y-2.5">
+              {group.links.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-[15px] text-mist hover:text-cream">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ))}
+
+        <div>
+          <h2 className="font-extrabold text-apricot">Talk to us</h2>
+          <ul className="mt-4 space-y-2.5 text-[15px]">
+            <li>
+              <a href={CONTACT.whatsapp.href} className="text-mist hover:text-cream">
+                {CONTACT.whatsapp.display}
+              </a>
+            </li>
+            {CONTACT.phones.map((p) => (
+              <li key={p.href}>
+                <a href={p.href} className="text-mist hover:text-cream">
+                  {p.display}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a href={`mailto:${CONTACT.email}`} className="break-all text-mist hover:text-cream">
+                {CONTACT.email}
+              </a>
+            </li>
+            <li>
+              <a href={CONTACT.linkedin} className="text-mist hover:text-cream">
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className="border-t border-teal-line">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-6 text-sm text-mist sm:px-6 lg:px-16">
-          <span className="flex items-center gap-2.5">
-            <Image src="/images/dych-icon.png" alt="" width={24} height={24} className="rounded-full" />
-            © {new Date().getFullYear()} DYCH Technologies
-          </span>
-          <span>Smart Vizion</span>
-        </div>
+        <p className="mx-auto max-w-7xl px-4 py-6 text-sm text-mist sm:px-6 lg:px-16">
+          © {new Date().getFullYear()} DYCH Technologies. All rights reserved.
+        </p>
       </div>
     </footer>
   );
