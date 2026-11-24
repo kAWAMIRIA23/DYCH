@@ -5,10 +5,10 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const links = [
+  { label: "Parents", href: "#parents" },
   { label: "About", href: "#about" },
   { label: "Solutions", href: "#solutions" },
   { label: "How it works", href: "#how-it-works" },
-  { label: "Why DYCH", href: "#why-dych" },
   { label: "Contact", href: "#contact" },
 ];
 

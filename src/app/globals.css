@@ -2,9 +2,10 @@
 
 /* DYCH design tokens.
    Teal carries the dark sections, cream the light ones. Amber and apricot are
-   accents and only ever sit on teal, where they read at 7:1 and above; on
+   accents and only ever sit on teal or violet, where they read at 7:1 and above; on
    cream they would fail contrast, so light sections use teal ink instead.
-   The violet lives in the logo mark and nowhere else. */
+   Deep violet, from the logo, grounds the parents section; apricot and
+   amber carry its type and actions there, as they do on teal. */
 @theme {
   --color-ground: #031f24;
   --color-teal: #042c33;
@@ -19,6 +20,11 @@
   --color-ink-sub: #4d6a6f;
   --color-amber: #eaa652;
   --color-apricot: #ffcc99;
+  --color-violet-deep: #10014a;
+  --color-violet: #2f02ac;
+  --color-violet-line: #2c1a7a;
+  --color-lilac: #c9c2ea;
+  --color-lilac-ink: #f4f0ff;
 
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
 }
