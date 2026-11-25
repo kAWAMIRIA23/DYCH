@@ -146,7 +146,8 @@ export function CirclePhoto({
   return (
     <figure className="mx-auto w-full max-w-[480px]">
       {photo}
-      <figcaption className="relative mt-4 text-right text-sm text-ink-sub">{caption}</figcaption>
+      {/* The caption always lands on the amber disc, where teal ink reads at 7:1. */}
+      <figcaption className="relative mt-4 text-right text-sm font-medium text-ink">{caption}</figcaption>
     </figure>
   );
 }

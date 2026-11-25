@@ -56,8 +56,10 @@ const parts: {
     happens: "Three messages: arrived, left, and expected but not arrived. The third is the one that matters, and it fires without anyone deciding to send it. The gap between the scan and the message is a school setting - immediate up to five hours, ten minutes as shipped - and the absence sweep has its own time of day.",
     seesLabel: "What the parent sees",
     sees: "A short message from a number they recognise, on the handset they already carry, with no app to install and no data bundle required.",
-    image: "/images/phone.jpg",
-    imageAlt: "A parent's phone showing a check-in message",
+    image: "/images/parent-alert.jpg",
+    imageAlt: "A parent at home smiling at her phone as a DYCH Parent App notification says Jesse checked in at 08:32",
+    imageRatio: "aspect-[43/24]",
+    caption: "Illustrative image",
   },
   {
     id: "records",
