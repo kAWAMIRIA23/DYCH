@@ -93,6 +93,7 @@ export default function Home() {
                 src="/images/gate.jpg"
                 alt="Pupils walking through a school gate past an entry camera"
                 fill
+                quality={90}
                 sizes="40vw"
                 className="object-cover"
               />
