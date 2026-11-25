@@ -43,15 +43,15 @@ export default function AboutPage() {
 
       <Section tone="dark">
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-[14px] bg-cream p-8 text-ink">
-            <h2 className="text-sm font-semibold text-violet">Vision</h2>
+          <div className="panel-outline p-8 text-cream">
+            <h2 className="type-label text-apricot">Vision</h2>
             <p className="type-item mt-4">
               To be Africa’s premier driver of industrial and digital transformation, pioneering intelligent automation
               systems that empower enterprises to build smarter, resilient, and forward-ready operations.
             </p>
           </div>
-          <div className="rounded-[14px] bg-cream p-8 text-ink">
-            <h2 className="text-sm font-semibold text-violet">Mission</h2>
+          <div className="panel-outline p-8 text-cream">
+            <h2 className="type-label text-apricot">Mission</h2>
             <p className="type-item mt-4">
               To accelerate enterprise efficiency and sustainable growth across Africa by engineering robust industrial
               automation and intelligent software solutions, delivered with technical precision, integrity, and
@@ -69,7 +69,7 @@ export default function AboutPage() {
         <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {team.map((t) => (
             <li key={t.name}>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[14px] border-[6px] border-teal bg-teal">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[4px] border-[6px] border-teal bg-teal">
                 <Image src={t.image} alt={t.name} fill sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" className="object-cover object-top" />
               </div>
               <p className="type-item mt-4 text-ink">{t.name}</p>

@@ -48,23 +48,26 @@ export default function PricingPage() {
           {plans.map((p) => (
             <li
               key={p.name}
-              className={`flex flex-col rounded-[14px] p-8 ${p.badge ? "bg-apricot text-teal" : "bg-cream text-ink"}`}
+              className={`flex flex-col p-8 ${p.badge ? "rounded-[4px] bg-apricot text-teal" : "panel-outline text-cream"}`}
             >
               <div className="flex items-center justify-between gap-4">
                 <h2 className="type-item">{p.name}</h2>
-                {p.badge && <span className="rounded-lg bg-teal px-3 py-1 text-sm font-semibold text-apricot">{p.badge}</span>}
+                {p.badge && <span className="type-label rounded-[4px] bg-teal px-3 py-1 text-apricot">{p.badge}</span>}
               </div>
-              <p className="mt-3 leading-relaxed text-ink-body">{p.text}</p>
-              <ul className="mt-6 space-y-3 border-t border-ink/15 pt-6">
+              <p className={`mt-3 leading-relaxed ${p.badge ? "text-ink-body" : "text-mist"}`}>{p.text}</p>
+              <ul className={`mt-6 space-y-3 border-t pt-6 ${p.badge ? "border-ink/15" : "border-teal-line"}`}>
                 {p.items.map((it) => (
                   <li key={it} className="flex gap-3">
-                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-teal" aria-hidden="true" />
+                    <Check className={`mt-0.5 h-5 w-5 shrink-0 ${p.badge ? "text-teal" : "text-apricot"}`} aria-hidden="true" />
                     <span>{it}</span>
                   </li>
                 ))}
               </ul>
               <div className="mt-auto flex flex-wrap items-center gap-5 pt-8">
-                <Link href="/contact" className="btn border-white bg-teal text-cream hover:bg-teal-raised">
+                <Link
+                  href="/contact"
+                  className={`btn border-white ${p.badge ? "bg-teal text-cream hover:bg-teal-raised" : "bg-apricot text-teal hover:bg-cream"}`}
+                >
                   Book a site visit
                 </Link>
                 <a href="#why-no-price" className="link">

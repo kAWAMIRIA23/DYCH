@@ -22,12 +22,12 @@ export default function ContactPage() {
             installation would involve at your site. A site assessment costs nothing and ends with a written scope.
           </p>
 
-          <div className="mt-12 rounded-[14px] bg-cream p-7 text-ink">
+          <div className="panel-outline mt-12 p-7 text-cream">
             <h2 className="type-item">Prefer WhatsApp?</h2>
-            <p className="mt-2 leading-relaxed text-ink-body">
+            <p className="mt-2 leading-relaxed text-mist">
               It is the quickest way to reach us, and you will get a person rather than a ticket number.
             </p>
-            <a href={CONTACT.whatsapp.href} className="btn mt-4 border-white bg-teal text-cream hover:bg-teal-raised">
+            <a href={CONTACT.whatsapp.href} className="btn mt-4 border-white bg-apricot text-teal hover:bg-cream">
               {CONTACT.whatsapp.display}
             </a>
           </div>

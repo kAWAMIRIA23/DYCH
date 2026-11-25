@@ -74,7 +74,7 @@ export default function ProductPage() {
           ))}
         </ol>
 
-        <div className="mt-16 grid gap-6 rounded-[14px] bg-teal p-7 text-cream sm:grid-cols-3 sm:p-9">
+        <div className="mt-16 grid gap-6 rounded-[4px] bg-teal p-7 text-cream sm:grid-cols-3 sm:p-9">
           <p className="text-mist sm:col-span-3">Illustrative camera view, not a product screenshot.</p>
           <p><span className="font-semibold text-apricot">ID 4471</span> · <span className="font-semibold text-apricot">ID 2208</span> · <span className="font-semibold text-amber">UNMATCHED</span></p>
           <div>

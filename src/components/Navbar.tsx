@@ -75,13 +75,13 @@ export function Navbar() {
                   <ChevronDown className={`h-4 w-4 transition-transform ${menu === l.label ? "rotate-180" : ""}`} />
                 </button>
                 {menu === l.label && (
-                  <ul className="absolute left-1/2 top-full mt-5 w-80 -translate-x-1/2 rounded-[14px] bg-cream p-2 text-ink shadow-[0_24px_50px_-24px_rgb(0_0_0/0.55)]">
+                  <ul className="absolute left-1/2 top-full mt-5 w-80 -translate-x-1/2 rounded-[4px] bg-cream p-2 text-ink shadow-[0_24px_50px_-24px_rgb(0_0_0/0.55)]">
                     {l.menu.map((m) => (
                       <li key={m.href}>
                         <Link
                           href={m.href}
                           onClick={() => setMenu(null)}
-                          className="block rounded-lg px-4 py-3 hover:bg-paper"
+                          className="block rounded-[4px] px-4 py-3 hover:bg-paper"
                         >
                           <span className="block font-semibold">{m.label}</span>
                           <span className="block text-sm text-ink-sub">{m.note}</span>
@@ -118,7 +118,7 @@ export function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
-          className="rounded p-2 text-cream lg:hidden"
+          className="rounded-[4px] p-2 text-cream lg:hidden"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>

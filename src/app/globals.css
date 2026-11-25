@@ -88,6 +88,14 @@ body {
   }
 }
 
+/* Boxes. One corner size site-wide (4px, the same as the buttons).
+   On dark teal sections a box is a hairline frame, not a solid block. */
+@utility panel-outline {
+  border: 1px solid var(--color-teal-line);
+  border-radius: 4px;
+  background: rgb(255 255 255 / 0.02);
+}
+
 /* Type scale. Five sizes, used everywhere; the hero headline is the fifth. */
 @utility type-page {
   font-size: clamp(2.6rem, 5.8vw, 5.2rem);

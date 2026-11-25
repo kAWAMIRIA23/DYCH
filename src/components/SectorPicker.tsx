@@ -35,7 +35,7 @@ export function SectorPicker({ sectors }: { sectors: Sector[] }) {
   }
 
   return (
-    <div className="grid overflow-hidden rounded-[14px] border border-teal-line lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+    <div className="grid overflow-hidden rounded-[4px] border border-teal-line lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
       <div
         role="tablist"
         aria-label="Sectors"
@@ -58,7 +58,7 @@ export function SectorPicker({ sectors }: { sectors: Sector[] }) {
               tabIndex={on ? 0 : -1}
               onClick={() => setActive(i)}
               onKeyDown={(e) => onKeyDown(e, i)}
-              className={`flex shrink-0 items-center justify-between gap-3 whitespace-nowrap rounded-lg px-4 py-3 text-left text-[15px] transition-colors lg:whitespace-normal lg:py-3.5 lg:text-base ${
+              className={`flex shrink-0 items-center justify-between gap-3 whitespace-nowrap rounded-[4px] px-4 py-3 text-left text-[15px] transition-colors lg:whitespace-normal lg:py-3.5 lg:text-base ${
                 on ? "bg-apricot font-semibold text-teal" : "text-mist hover:bg-white/5 hover:text-cream"
               }`}
             >

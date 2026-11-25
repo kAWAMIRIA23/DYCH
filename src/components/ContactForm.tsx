@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import { CONTACT } from "@/lib/site";
 
 const field =
-  "w-full rounded-lg border border-ink/25 bg-paper px-4 py-3 text-ink placeholder:text-ink-sub focus:border-teal focus:outline-none";
+  "w-full rounded-[4px] border border-ink/25 bg-paper px-4 py-3 text-ink placeholder:text-ink-sub focus:border-teal focus:outline-none";
 const label = "mb-1.5 block text-sm font-semibold text-ink";
 
 export function ContactForm() {
@@ -31,7 +31,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5 rounded-[14px] bg-cream p-6 text-ink shadow-[0_30px_60px_-30px_rgb(0_0_0/0.6)] sm:p-8">
+    <form onSubmit={onSubmit} className="space-y-5 rounded-[4px] bg-cream p-6 text-ink shadow-[0_30px_60px_-30px_rgb(0_0_0/0.6)] sm:p-8">
       <div>
         <h2 className="type-item">Or send us the details</h2>
         <p className="mt-2 leading-relaxed text-ink-body">

@@ -127,7 +127,7 @@ export function CirclePhoto({ src, alt, ratio = "aspect-[4/3]" }: { src: string;
         className="absolute left-1/2 top-1/2 aspect-square w-[115%] -translate-x-[42%] -translate-y-1/2 rounded-full bg-amber"
         aria-hidden="true"
       />
-      <div className={`relative ${ratio} overflow-hidden rounded-[14px] border-[6px] border-teal`}>
+      <div className={`relative ${ratio} overflow-hidden rounded-[4px] border-[6px] border-teal`}>
         <Image src={src} alt={alt} fill quality={90} sizes="(min-width: 768px) 40vw, 90vw" className="object-cover" />
       </div>
     </div>
@@ -169,12 +169,15 @@ export function CreamCards({
   return (
     <ul className={`grid gap-4 ${grid}`}>
       {items.map((it, i) => (
-        <li key={i} className="flex flex-col rounded-[14px] bg-cream p-7 text-ink">
-          {it.label && <span className="text-sm font-semibold text-violet">{it.label}</span>}
+        <li
+          key={i}
+          className="panel-outline flex flex-col p-8 text-cream transition-colors duration-150 hover:border-mist hover:bg-teal-raised"
+        >
+          {it.label && <span className="type-label text-apricot">{it.label}</span>}
           <h3 className={`type-item ${it.label ? "mt-5" : ""}`}>{it.title}</h3>
-          <p className="mt-2 leading-relaxed text-ink-body">{it.text}</p>
+          <p className="mt-3 leading-relaxed text-mist">{it.text}</p>
           {it.link && (
-            <Link href={it.link.href} className="link mt-auto pt-5 text-ink">
+            <Link href={it.link.href} className="link mt-auto pt-6 text-apricot">
               {it.link.label}
             </Link>
           )}

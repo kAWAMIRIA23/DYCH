@@ -58,11 +58,11 @@ export default function SecurityPage() {
         </SectionIntro>
         <ol className="mt-14 grid gap-4 md:grid-cols-3">
           {enrolment.map((s, i) => (
-            <li key={s.title} className="rounded-[14px] bg-cream p-7 text-ink">
-              <Illustration name={s.art} className="mx-auto mb-6 max-w-[240px]" />
+            <li key={s.title} className="panel-outline p-7 text-cream">
+              <Illustration name={s.art} dark className="mx-auto mb-6 max-w-[240px]" />
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-amber font-semibold text-teal">{i + 1}</span>
               <h3 className="type-item mt-5">{s.title}</h3>
-              <p className="mt-2 leading-relaxed text-ink-body">{s.text}</p>
+              <p className="mt-2 leading-relaxed text-mist">{s.text}</p>
             </li>
           ))}
         </ol>

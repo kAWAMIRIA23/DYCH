@@ -156,7 +156,7 @@ export default function HowItWorksPage() {
         </SectionIntro>
         <ol className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stages.map((s, i) => (
-            <li key={s.title} className="rounded-[14px] bg-teal p-7 text-cream">
+            <li key={s.title} className="rounded-[4px] bg-teal p-7 text-cream">
               <span className="text-sm font-semibold text-apricot">Stage {i + 1}</span>
               <h3 className="type-item mt-5">{s.title}</h3>
               <p className="mt-2 leading-relaxed text-mist">{s.text}</p>

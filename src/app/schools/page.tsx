@@ -175,32 +175,32 @@ export default function SchoolsPage() {
           moment a school has reported it.
         </Lede>
 
-        <div className="mt-14 rounded-[14px] bg-cream p-7 text-ink sm:p-10">
+        <div className="panel-outline mt-14 p-7 text-cream sm:p-10">
           <h3 className="type-item measure-body">
             The first deployment: one school, one gate, and a register that stopped eating the first lesson.
           </h3>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <p className="leading-relaxed text-ink-body">
+            <p className="leading-relaxed text-mist">
               The problem was the ordinary one. A manual register can take up to twenty minutes of class time a day, and
               at the end of it the school still cannot prove who collected a child. Cameras at the entry point verify the
               pupil, the register writes itself, and the parent hears about it before they have thought to ring the
               office.
             </p>
-            <p className="leading-relaxed text-ink-body">
+            <p className="leading-relaxed text-mist">
               What went in: a weatherproof gate camera with on-device matching, the admin dashboard, and parent alerts.
               Installation and staff training were part of it, not a separate engagement.
             </p>
           </div>
-          <dl className="mt-8 grid gap-4 border-t border-ink/15 pt-6 sm:grid-cols-3">
+          <dl className="mt-8 grid gap-4 border-t border-teal-line pt-6 sm:grid-cols-3">
             {["Students enrolled", "Time saved daily", "Attendance accuracy"].map((m) => (
               <div key={m}>
-                <dd className="text-3xl font-semibold text-ink-sub">—</dd>
+                <dd className="text-3xl font-semibold text-apricot">—</dd>
                 <dt className="mt-1 font-semibold">{m}</dt>
-                <dd className="text-sm text-ink-sub">Not yet reported</dd>
+                <dd className="text-sm text-mist">Not yet reported</dd>
               </div>
             ))}
           </dl>
-          <p className="mt-6 text-[15px] leading-relaxed text-ink-sub">
+          <p className="mt-6 text-[15px] leading-relaxed text-mist">
             These are blank because the school has not reported them yet. When it does, the figures will appear here
             with the school’s name on them and its permission behind them. We would rather show you nothing than show
             you a number we made up.

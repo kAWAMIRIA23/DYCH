@@ -87,7 +87,7 @@ export function TimeSaved() {
         />
       </div>
 
-      <div className="rounded-[14px] bg-teal p-7 text-cream sm:p-9" aria-live="polite">
+      <div className="rounded-[4px] bg-teal p-7 text-cream sm:p-9" aria-live="polite">
         <p className="font-semibold text-apricot">Time recovered</p>
         <dl className="mt-6 space-y-6">
           <div>

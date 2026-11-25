@@ -92,7 +92,7 @@ export default function Home() {
               One installation covers the entrance, the attendance record, the people who need telling, and the screen
               the officer on the door actually holds. Each part works on its own and gets sharper alongside the others.
             </Lede>
-            <div className="relative mt-10 hidden aspect-[4/3] overflow-hidden rounded-[14px] border-[6px] border-teal lg:block">
+            <div className="relative mt-10 hidden aspect-[4/3] overflow-hidden rounded-[4px] border-[6px] border-teal lg:block">
               <Image
                 src="/images/gate.jpg"
                 alt="Pupils walking through a school gate past an entry camera"
@@ -157,7 +157,7 @@ export default function Home() {
             end of term.
           </Lede>
         </SectionIntro>
-        <ol className="mt-14 grid gap-px overflow-hidden rounded-[14px] border border-ink/15 bg-ink/15 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-14 grid gap-px overflow-hidden rounded-[4px] border border-ink/15 bg-ink/15 sm:grid-cols-2 lg:grid-cols-4">
           {pipeline.map((s, i) => (
             <li key={s.title} className="bg-paper p-7">
               <Illustration name={s.art} className="mx-auto mb-5 max-w-[200px]" />
@@ -219,13 +219,13 @@ export default function Home() {
           </div>
           <div className="space-y-8">
             <CirclePhoto src="/images/phone.jpg" alt="A parent's phone showing a check-in notification" ratio="aspect-[4/5]" />
-            <div className="relative rounded-[14px] bg-cream p-7 text-ink">
+            <div className="panel-outline relative p-7 text-cream">
               <p className="type-item">All face data is matched and encrypted on-device. No photos ever leave the school.</p>
-              <p className="mt-3 leading-relaxed text-ink-body">
+              <p className="mt-3 leading-relaxed text-mist">
                 Recognition runs on a unit at your site, not on a server elsewhere. That is why the gate survives an
                 outage, and why there is nothing to upload in the first place.
               </p>
-              <Link href="/security-and-trust" className="mt-4 link inline-block text-ink">
+              <Link href="/security-and-trust" className="link mt-4 inline-block text-apricot">
                 How we handle children’s data
               </Link>
             </div>
