@@ -134,7 +134,7 @@ export function CirclePhoto({
   const photo = (
     <div className="relative mx-auto w-full max-w-[480px]">
       <div
-        className="absolute left-1/2 top-1/2 aspect-square w-[115%] -translate-x-[42%] -translate-y-1/2 rounded-full bg-amber"
+        className="absolute left-1/2 top-1/2 aspect-square w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber md:w-[115%] md:-translate-x-[42%]"
         aria-hidden="true"
       />
       <div className={`relative ${ratio} overflow-hidden rounded-[4px] border-[6px] border-teal`}>
@@ -163,8 +163,31 @@ export function Details({
   cols?: 1 | 2 | 3;
 }) {
   const grid = cols === 3 ? "md:grid-cols-3" : cols === 2 ? "md:grid-cols-2" : "";
+  const line = tone === "dark" ? "border-teal-line" : "border-ink/15";
   return (
-    <dl className={`grid gap-x-10 gap-y-9 ${grid}`}>
+    <>
+      {/* Phones: each point folds into a row you tap to open. */}
+      <div className={`border-b md:hidden ${line}`}>
+        {items.map((it, i) => (
+          <details key={i} className={`group border-t ${line}`}>
+            <summary
+              className={`flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 type-item ${
+                tone === "dark" ? "text-cream" : "text-ink"
+              }`}
+            >
+              {it.title}
+              <span
+                aria-hidden="true"
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber text-base text-teal transition-transform group-open:rotate-45"
+              >
+                +
+              </span>
+            </summary>
+            <p className={`pb-5 leading-relaxed ${tone === "dark" ? "text-mist" : "text-ink-body"}`}>{it.text}</p>
+          </details>
+        ))}
+      </div>
+    <dl className={`hidden gap-x-10 gap-y-9 md:grid ${grid}`}>
       {items.map((it, i) => (
         <div key={i} className={`border-t pt-5 ${tone === "dark" ? "border-teal-line" : "border-ink/15"}`}>
           <dt className={`type-item ${tone === "dark" ? "text-cream" : "text-ink"}`}>{it.title}</dt>
@@ -172,6 +195,7 @@ export function Details({
         </div>
       ))}
     </dl>
+    </>
   );
 }
 

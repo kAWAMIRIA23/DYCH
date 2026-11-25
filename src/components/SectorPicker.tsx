@@ -13,7 +13,8 @@ export type Sector = {
 
 /**
  * Sectors as a picker: the list on the left, the chosen sector's full text and
- * illustration on the right. On phones the list becomes a row you swipe.
+ * illustration on the right. Below the lg breakpoint it becomes a stacked
+ * list where tapping a sector opens its text underneath.
  * Built as an ARIA tablist, so arrow keys, Home and End move between sectors.
  */
 export function SectorPicker({ sectors }: { sectors: Sector[] }) {
@@ -34,8 +35,51 @@ export function SectorPicker({ sectors }: { sectors: Sector[] }) {
     tabs.current[next]?.focus();
   }
 
+  const [open, setOpen] = useState<number | null>(0);
+
   return (
-    <div className="grid overflow-hidden rounded-[4px] border border-teal-line lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+    <>
+    {/* Phones and tablets: a stacked list, one sector open at a time. */}
+    <ul className="border-b border-teal-line lg:hidden">
+      {sectors.map((sec, i) => {
+        const isOpen = open === i;
+        return (
+          <li key={sec.title} className="border-t border-teal-line">
+            <h3>
+              <button
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={`sector-m-${i}`}
+                onClick={() => setOpen(isOpen ? null : i)}
+                className={`flex min-h-14 w-full items-center justify-between gap-4 py-4 text-left type-item ${
+                  isOpen ? "text-apricot" : "text-cream"
+                }`}
+              >
+                {sec.title}
+                <span
+                  aria-hidden="true"
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber text-base text-teal transition-transform ${
+                    isOpen ? "rotate-45" : ""
+                  }`}
+                >
+                  +
+                </span>
+              </button>
+            </h3>
+            <div id={`sector-m-${i}`} hidden={!isOpen} className="pb-6">
+              <p className="leading-relaxed text-mist">{sec.text}</p>
+              {sec.link && (
+                <Link href={sec.link.href} className="link mt-4 inline-block text-apricot">
+                  {sec.link.label}
+                </Link>
+              )}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+
+    <div className="hidden overflow-hidden rounded-[4px] border border-teal-line lg:grid lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
       <div
         role="tablist"
         aria-label="Sectors"
@@ -100,5 +144,6 @@ export function SectorPicker({ sectors }: { sectors: Sector[] }) {
         ))}
       </div>
     </div>
+    </>
   );
 }
