@@ -96,6 +96,13 @@ body {
   background: rgb(255 255 255 / 0.02);
 }
 
+/* The same frame for light sections: a dark hairline, no fill. */
+@utility panel-outline-light {
+  border: 1px solid rgb(4 44 51 / 0.15);
+  border-radius: 4px;
+  background: rgb(255 255 255 / 0.35);
+}
+
 /* Type scale. Five sizes, used everywhere; the hero headline is the fifth. */
 @utility type-page {
   font-size: clamp(2.6rem, 5.8vw, 5.2rem);

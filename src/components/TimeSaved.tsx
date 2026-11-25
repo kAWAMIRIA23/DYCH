@@ -87,24 +87,24 @@ export function TimeSaved() {
         />
       </div>
 
-      <div className="rounded-[4px] bg-teal p-7 text-cream sm:p-9" aria-live="polite">
-        <p className="font-semibold text-apricot">Time recovered</p>
+      <div className="panel-outline-light p-7 text-ink sm:p-9" aria-live="polite">
+        <p className="type-label text-ink-sub">Time recovered</p>
         <dl className="mt-6 space-y-6">
           <div>
-            <dt className="text-mist">Every day</dt>
+            <dt className="text-ink-sub">Every day</dt>
             <dd className="font-display text-[clamp(2rem,4vw,2.8rem)] font-semibold leading-tight tabular-nums">{format(day)}</dd>
           </div>
-          <div className="border-t border-teal-line pt-6">
-            <dt className="text-mist">Every week</dt>
+          <div className="border-t border-ink/15 pt-6">
+            <dt className="text-ink-sub">Every week</dt>
             <dd className="font-display text-[clamp(2rem,4vw,2.8rem)] font-semibold leading-tight tabular-nums">{format(week)}</dd>
           </div>
         </dl>
-        <p className="mt-7 text-sm leading-relaxed text-mist">
-          <strong className="text-cream">Assumptions.</strong> 3 seconds per Smart Vizion recognition, as measured by
+        <p className="mt-7 text-sm leading-relaxed text-ink-sub">
+          <strong className="text-ink">Assumptions.</strong> 3 seconds per Smart Vizion recognition, as measured by
           DYCH Technologies. One scan per person per day. 5 school days a week. Departures, second entrances and
           visitors are not counted, so the real figure is higher.
         </p>
-        <Link href="/how-it-works" className="mt-5 link inline-block text-apricot">
+        <Link href="/how-it-works" className="link mt-5 inline-block text-ink">
           How does this work?
         </Link>
       </div>

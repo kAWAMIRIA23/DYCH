@@ -71,7 +71,7 @@ export function SectorPicker({ sectors }: { sectors: Sector[] }) {
         })}
       </div>
 
-      <div className="bg-cream text-ink">
+      <div className="text-cream">
         {/* Every panel is in the page so search engines read all eight;
             only the chosen one is shown. */}
         {sectors.map((sec, i) => (
@@ -84,18 +84,18 @@ export function SectorPicker({ sectors }: { sectors: Sector[] }) {
             className="grid h-full items-center gap-8 p-7 sm:p-10 md:grid-cols-[minmax(0,1fr)_200px]"
           >
             <div className="min-w-0">
-              <p className="text-sm font-semibold tabular-nums text-ink-sub">
+              <p className="type-label tabular-nums text-mist">
                 {i + 1} of {sectors.length}
               </p>
               <h3 className="type-item mt-1">{sec.title}</h3>
-              <p className="mt-4 measure-body text-[17px] leading-relaxed text-ink-body">{sec.text}</p>
+              <p className="mt-4 measure-body text-[17px] leading-relaxed text-mist">{sec.text}</p>
               {sec.link && (
-                <Link href={sec.link.href} className="mt-5 link inline-block text-ink">
+                <Link href={sec.link.href} className="link mt-5 inline-block text-apricot">
                   {sec.link.label}
                 </Link>
               )}
             </div>
-            <Illustration name={sec.art} className="mx-auto max-w-[200px] md:max-w-none" />
+            <Illustration name={sec.art} dark className="mx-auto max-w-[200px] md:max-w-none" />
           </div>
         ))}
       </div>

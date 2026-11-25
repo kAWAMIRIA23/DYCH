@@ -74,16 +74,16 @@ export default function ProductPage() {
           ))}
         </ol>
 
-        <div className="mt-16 grid gap-6 rounded-[4px] bg-teal p-7 text-cream sm:grid-cols-3 sm:p-9">
-          <p className="text-mist sm:col-span-3">Illustrative camera view, not a product screenshot.</p>
-          <p><span className="font-semibold text-apricot">ID 4471</span> · <span className="font-semibold text-apricot">ID 2208</span> · <span className="font-semibold text-amber">UNMATCHED</span></p>
+        <div className="panel-outline-light mt-16 grid gap-6 p-7 text-ink sm:grid-cols-3 sm:p-9">
+          <p className="text-ink-sub sm:col-span-3">Illustrative camera view, not a product screenshot.</p>
+          <p><span className="font-semibold">ID 4471</span> · <span className="font-semibold">ID 2208</span> · <span className="font-semibold">UNMATCHED</span></p>
           <div>
             <p className="font-semibold">Matched</p>
-            <p className="text-mist">Known, enrolled identity</p>
+            <p className="text-ink-sub">Known, enrolled identity</p>
           </div>
           <div>
             <p className="font-semibold">Unmatched</p>
-            <p className="text-mist">Flagged for a person to check</p>
+            <p className="text-ink-sub">Flagged for a person to check</p>
           </div>
         </div>
       </Section>

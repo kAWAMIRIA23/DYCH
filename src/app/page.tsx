@@ -157,9 +157,9 @@ export default function Home() {
             end of term.
           </Lede>
         </SectionIntro>
-        <ol className="mt-14 grid gap-px overflow-hidden rounded-[4px] border border-ink/15 bg-ink/15 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {pipeline.map((s, i) => (
-            <li key={s.title} className="bg-paper p-7">
+            <li key={s.title} className="panel-outline-light p-7">
               <Illustration name={s.art} className="mx-auto mb-5 max-w-[200px]" />
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber font-semibold tabular-nums text-teal">
                 {i + 1}
