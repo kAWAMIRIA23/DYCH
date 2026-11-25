@@ -51,7 +51,7 @@ const sectors: Sector[] = [
   { title: "Hospitality and facilities", art: "faces", text: "Staff check-in for hotels, gyms and event venues. Members recognised at the door. Guests logged at reception instead of on a clipboard that walks off." },
   { title: "Estates and gated communities", art: "boarding", text: "Residents recognised at the boom or the pedestrian gate. Guests logged against the host expecting them. Release on the tablet when the network drops, syncing when it returns." },
   { title: "Places of worship and NGOs", art: "alerts", text: "Guest records on the days a building fills with people nobody recognises, hours for paid staff, and care around the rooms that need it.", link: EDU },
-  { title: "Education", art: "attendance", text: "Pupil and staff attendance, alerts to guardians, and authorised pickup at the gate. The same engine as every card above, with the vocabulary a school uses.", link: EDU },
+  { title: "Education", art: "attendance", text: "Pupil and staff attendance, alerts to guardians, and authorised pickup at the gate. The same engine as every sector above, with the vocabulary a school uses.", link: EDU },
 ];
 
 const pipeline = [
