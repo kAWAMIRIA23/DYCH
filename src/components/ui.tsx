@@ -130,7 +130,7 @@ export function CirclePhoto({ src, alt, ratio = "aspect-[4/3]" }: { src: string;
         aria-hidden="true"
       />
       <div className={`relative ${ratio} overflow-hidden rounded-[14px] border-[6px] border-teal`}>
-        <Image src={src} alt={alt} fill sizes="(min-width: 768px) 40vw, 90vw" className="object-cover" />
+        <Image src={src} alt={alt} fill quality={90} sizes="(min-width: 768px) 40vw, 90vw" className="object-cover" />
       </div>
     </div>
   );
