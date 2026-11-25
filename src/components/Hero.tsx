@@ -16,7 +16,7 @@ export function Hero() {
           sizes="100vw"
           className="object-cover object-[60%_40%] opacity-55 mix-blend-screen grayscale contrast-110"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(4_44_51/0.75)_0%,rgb(4_44_51/0.3)_30%,rgb(4_44_51/0.94)_62%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_srgb,var(--color-teal)_75%,transparent)_0%,color-mix(in_srgb,var(--color-teal)_30%,transparent)_30%,color-mix(in_srgb,var(--color-teal)_94%,transparent)_62%)]" />
       </div>
 
       <div className="mx-auto mt-auto grid w-full max-w-7xl gap-10 px-4 pb-12 pt-36 sm:px-6 md:grid-cols-[1.4fr_1fr] md:items-end lg:px-16 lg:pb-14">
