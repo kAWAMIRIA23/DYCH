@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ScanFace, ClipboardCheck, BellRing, TabletSmartphone } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { TimeSaved } from "@/components/TimeSaved";
-import { Button, CirclePhoto, CreamCards, Cta, H2, Lede, Section, SectionIntro, TextLink } from "@/components/ui";
+import { Button, CirclePhoto, CreamCards, Cta, H2, Illustration, Lede, Section, SectionIntro, TextLink } from "@/components/ui";
 
 const problems = [
   ["Shared access cards", "The credential is the person, not a badge that can be lent, copied or left at home."],
@@ -54,10 +54,10 @@ const sectors = [
 ];
 
 const pipeline = [
-  { label: "Recognition", title: "Recognition", text: "A face is matched at the entry point, on hardware standing on your own site." },
-  { label: "Attendance", title: "Attendance", text: "That same scan writes the arrival straight into the register." },
-  { label: "Alerts", title: "Alerts", text: "A push notification reaches the parent on the school’s chosen delay, with SMS behind it." },
-  { label: "Records", title: "Records", text: "Entry logs and attendance collect into one searchable view, and export." },
+  { art: "detect", title: "Recognition", text: "A face is matched at the entry point, on hardware standing on your own site." },
+  { art: "attendance", title: "Attendance", text: "That same scan writes the arrival straight into the register." },
+  { art: "alerts", title: "Alerts", text: "A push notification reaches the parent on the school’s chosen delay, with SMS behind it." },
+  { art: "records", title: "Records", text: "Entry logs and attendance collect into one searchable view, and export." },
 ];
 
 export default function Home() {
@@ -153,6 +153,7 @@ export default function Home() {
         <ol className="mt-14 grid gap-px overflow-hidden rounded-[14px] border border-ink/15 bg-ink/15 sm:grid-cols-2 lg:grid-cols-4">
           {pipeline.map((s, i) => (
             <li key={s.title} className="bg-paper p-7">
+              <Illustration name={s.art} className="mx-auto mb-5 max-w-[200px]" />
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber font-semibold tabular-nums text-teal">
                 {i + 1}
               </span>

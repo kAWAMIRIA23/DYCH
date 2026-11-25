@@ -206,3 +206,28 @@ export function Cta({ title, children, button = "Book a Demo" }: { title: ReactN
     </section>
   );
 }
+
+/** One of the bold-filled line illustrations in /public/illustrations.
+    Decorative by default (the text beside it says the same thing). */
+export function Illustration({
+  name,
+  alt = "",
+  className = "",
+  plain = false,
+}: {
+  name: string;
+  alt?: string;
+  className?: string;
+  plain?: boolean;
+}) {
+  return (
+    <Image
+      src={`/illustrations/${plain ? "plain/" : ""}${name}.png`}
+      alt={alt}
+      width={1200}
+      height={1200}
+      sizes="(min-width: 768px) 30vw, 70vw"
+      className={`h-auto w-full ${className}`}
+    />
+  );
+}

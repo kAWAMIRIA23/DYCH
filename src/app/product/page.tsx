@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CirclePhoto, CreamCards, Cta, H2, Lede, PageHeader, Section, SectionIntro } from "@/components/ui";
+import { CirclePhoto, CreamCards, Cta, H2, Illustration, Lede, PageHeader, Section, SectionIntro } from "@/components/ui";
 
 export const metadata: Metadata = { title: "Smart Vizion" };
 
 const steps = [
   {
+    art: "detect",
     title: "It recognises a face at the entry point",
     text: "A camera matches an arriving face against your own enrolled records, on a unit standing on your own premises. No images leave the site, and the entrance keeps working through an internet outage because nothing has to travel for a match to happen.",
     link: { href: "/security-and-trust", label: "What does on-device mean?" },
   },
   {
+    art: "register",
     title: "That same scan writes the record",
     text: "There is no second step for anyone to remember. Arrival and departure are timestamped as they occur, so the register - or the time record - is already correct when someone opens it.",
   },
   {
+    art: "parent-alert",
     title: "And somebody is told, without anyone deciding to",
     text: "A push notification reaches whoever needs to know, carrying the photo so they can see the match was right. How soon after the scan it goes is a setting the site controls. SMS follows as a metered fallback for anyone without the app.",
   },
@@ -58,6 +61,7 @@ export default function ProductPage() {
         <ol className="grid gap-10 md:grid-cols-3">
           {steps.map((s, i) => (
             <li key={s.title} className="border-t-4 border-amber pt-5">
+              <Illustration name={s.art} className="mx-auto mb-6 max-w-[260px]" />
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber font-semibold text-teal">{i + 1}</span>
               <h2 className="mt-5 text-2xl font-semibold leading-tight tracking-tight text-ink">{s.title}</h2>
               <p className="mt-3 leading-relaxed text-ink-body">{s.text}</p>

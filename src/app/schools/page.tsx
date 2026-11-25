@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { CirclePhoto, Cta, Details, H2, Lede, PageHeader, Section, type Tone } from "@/components/ui";
+import { CirclePhoto, Cta, Details, H2, Illustration, Lede, PageHeader, Section, type Tone } from "@/components/ui";
 
 export const metadata: Metadata = { title: "Schools" };
 
@@ -13,6 +13,7 @@ function Capability({
   items,
   image,
   imageAlt = "",
+  illustration,
 }: {
   id?: string;
   tone: Tone;
@@ -21,10 +22,11 @@ function Capability({
   items: { title: string; text: ReactNode }[];
   image?: string;
   imageAlt?: string;
+  illustration?: string;
 }) {
   return (
     <Section id={id} tone={tone}>
-      <div className={`grid gap-12 ${image ? "md:grid-cols-[1.1fr_0.9fr] md:items-center lg:gap-20" : ""}`}>
+      <div className={`grid gap-12 ${image || illustration ? "md:grid-cols-[1.1fr_0.9fr] md:items-center lg:gap-20" : ""}`}>
         <div className="min-w-0">
           <H2 tone={tone} className="max-w-[18ch]">
             {title}
@@ -34,6 +36,7 @@ function Capability({
           </Lede>
         </div>
         {image && <CirclePhoto src={image} alt={imageAlt} />}
+        {illustration && <Illustration name={illustration} className="mx-auto max-w-[380px]" />}
       </div>
       <div className="mt-14">
         <Details tone={tone} items={items} />
@@ -72,6 +75,7 @@ export default function SchoolsPage() {
       <Capability
         id="security"
         tone="light"
+        illustration="detect"
         title="Facial recognition at the entry point"
         intro="A weatherproof camera at the gate matches an arriving face against the school’s own enrolled records, and a unit on site does the matching. Face data is matched and encrypted on the school’s own hardware: no photos leave the school. A pupil walks up to the gate as normal, with no card and no tag."
         items={[
@@ -85,6 +89,7 @@ export default function SchoolsPage() {
       <Capability
         id="attendance"
         tone="cream"
+        illustration="attendance"
         title="A register that fills itself"
         intro="Arrival is logged the moment a face is matched, and the class teacher opens a register that is already correct. Nobody reconstructs a morning from memory at break, and nobody transcribes a paper sheet afterwards."
         items={[
@@ -112,6 +117,7 @@ export default function SchoolsPage() {
       <Capability
         id="boarding"
         tone="light"
+        illustration="boarding"
         title="Boarding schools, where the stakes are higher"
         intro="A boarding parent is often far from the school and depends on the system entirely. So a boarder’s record is not a daily arrival event but a running campus state, and leaving campus is something that has to be authorised before it happens."
         items={[
@@ -138,6 +144,7 @@ export default function SchoolsPage() {
       <Capability
         id="dashboard"
         tone="dark"
+        illustration="records"
         title="One dashboard instead of a shelf of files"
         intro="The desktop application the school actually runs on. Live camera views with recognition overlays, the gate devices and guard accounts, and a searchable record of pupils, teachers, classes and timetables in one place rather than in separate books."
         items={[
@@ -150,6 +157,7 @@ export default function SchoolsPage() {
       <Capability
         id="report-cards"
         tone="light"
+        illustration="report-cards"
         title="Report cards, published in one action"
         intro="A class’s assessment marks sit against the school’s own grading scale, which can be set per level or overridden for a single class. When a term’s reports are ready they publish to the parent portal in one action."
         items={[

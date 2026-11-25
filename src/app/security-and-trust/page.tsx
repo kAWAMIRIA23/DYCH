@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Cta, Details, H2, Lede, PageHeader, Section, SectionIntro } from "@/components/ui";
+import { Cta, Details, H2, Illustration, Lede, PageHeader, Section, SectionIntro } from "@/components/ui";
 
 export const metadata: Metadata = { title: "Security & trust" };
 
 const enrolment = [
-  { title: "A face is found", text: "The camera takes a frame and locates the face in it. At this point nothing has been identified - the system knows only that a face is there." },
-  { title: "Its geometry is measured", text: "The distances and angles between landmarks - the corners of the eyes, the nose, the mouth - are measured. The measurements are what matter; the picture they came from is not kept." },
-  { title: "Numbers are what is stored", text: "Those measurements become the template: a string of numbers held on the unit at your gate. It can be compared against a face at the gate. It cannot be turned back into one." },
+  { art: "detect", title: "A face is found", text: "The camera takes a frame and locates the face in it. At this point nothing has been identified - the system knows only that a face is there." },
+  { art: "extract", title: "Its geometry is measured", text: "The distances and angles between landmarks - the corners of the eyes, the nose, the mouth - are measured. The measurements are what matter; the picture they came from is not kept." },
+  { art: "template", title: "Numbers are what is stored", text: "Those measurements become the template: a string of numbers held on the unit at your gate. It can be compared against a face at the gate. It cannot be turned back into one." },
 ];
 
 const questions = [
@@ -59,6 +59,7 @@ export default function SecurityPage() {
         <ol className="mt-14 grid gap-4 md:grid-cols-3">
           {enrolment.map((s, i) => (
             <li key={s.title} className="rounded-[14px] bg-cream p-7 text-ink">
+              <Illustration name={s.art} className="mx-auto mb-6 max-w-[240px]" />
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-amber font-semibold text-teal">{i + 1}</span>
               <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
               <p className="mt-2 leading-relaxed text-ink-body">{s.text}</p>

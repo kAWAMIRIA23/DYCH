@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CirclePhoto, Cta, Details, H2, Lede, PageHeader, Section, SectionIntro, type Tone } from "@/components/ui";
+import { CirclePhoto, Cta, Details, H2, Illustration, Lede, PageHeader, Section, SectionIntro, type Tone } from "@/components/ui";
 
 export const metadata: Metadata = { title: "How it works" };
 
@@ -15,6 +15,7 @@ const parts: {
   sees: string;
   image?: string;
   imageAlt?: string;
+  illustration?: string;
 }[] = [
   {
     id: "recognition",
@@ -32,6 +33,7 @@ const parts: {
   {
     id: "attendance",
     name: "Attendance",
+    illustration: "register",
     tone: "cream",
     intro: "The entry event is the attendance record. There is no second step for anyone to remember, and no paper register to transcribe afterwards.",
     quote: "The walk through the gate is the register entry. Nothing is transcribed afterwards, and nothing waits for a teacher to find a moment.",
@@ -56,6 +58,7 @@ const parts: {
   {
     id: "records",
     name: "Records",
+    illustration: "records",
     tone: "light",
     intro: "Everything above produces records. This is where they become something a head teacher can take into a meeting.",
     quote: "The reports are drawn from the entry and exit events themselves. Nobody assembles them by hand, so the figures and the gate cannot disagree.",
@@ -94,7 +97,7 @@ export default function HowItWorksPage() {
 
       {parts.map((p, i) => (
         <Section key={p.id} id={p.id} tone={p.tone}>
-          <div className={`grid gap-12 ${p.image ? "md:grid-cols-[1.1fr_0.9fr] md:items-center lg:gap-20" : ""}`}>
+          <div className={`grid gap-12 ${p.image || p.illustration ? "md:grid-cols-[1.1fr_0.9fr] md:items-center lg:gap-20" : ""}`}>
             <div className="min-w-0">
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-amber text-lg font-semibold text-teal">{i + 1}</span>
               <H2 tone={p.tone} className="mt-6">
@@ -108,6 +111,7 @@ export default function HowItWorksPage() {
               </blockquote>
             </div>
             {p.image && <CirclePhoto src={p.image} alt={p.imageAlt ?? ""} />}
+            {p.illustration && <Illustration name={p.illustration} className="mx-auto max-w-[380px]" />}
           </div>
           <div className="mt-14">
             <Details
