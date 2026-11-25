@@ -4,7 +4,7 @@ import { ScanFace, ClipboardCheck, BellRing, TabletSmartphone } from "lucide-rea
 import { Hero } from "@/components/Hero";
 import { TimeSaved } from "@/components/TimeSaved";
 import { SectorPicker, type Sector } from "@/components/SectorPicker";
-import { Button, CirclePhoto, Cta, H2, Illustration, Lede, Section, SectionIntro, TextLink } from "@/components/ui";
+import { Button, CirclePhoto, Cta, H2, Lede, Section, SectionIntro, TextLink } from "@/components/ui";
 
 const problems = [
   ["Shared access cards", "The credential is the person, not a badge that can be lent, copied or left at home."],
@@ -56,13 +56,6 @@ const sectors: Sector[] = [
   { title: "Estates and gated communities", art: "boarding", text: "Residents recognised at the boom or the pedestrian gate. Guests logged against the host expecting them. Release on the tablet when the network drops, syncing when it returns." },
   { title: "Places of worship and NGOs", art: "alerts", text: "Guest records on the days a building fills with people nobody recognises, hours for paid staff, and care around the rooms that need it.", link: EDU },
   { title: "Education", art: "attendance", text: "Pupil and staff attendance, alerts to guardians, and authorised pickup at the gate. The same engine as every sector above, with the vocabulary a school uses.", link: EDU },
-];
-
-const pipeline = [
-  { art: "detect", title: "Recognition", text: "A face is matched at the entry point, on hardware standing on your own site." },
-  { art: "attendance", title: "Attendance", text: "That same scan writes the arrival straight into the register." },
-  { art: "alerts", title: "Alerts", text: "A push notification reaches the parent on the school’s chosen delay, with SMS behind it." },
-  { art: "records", title: "Records", text: "Entry logs and attendance collect into one searchable view, and export." },
 ];
 
 export default function Home() {
@@ -125,6 +118,11 @@ export default function Home() {
               The same four run at a school gate, a factory turnstile, a clinic reception and an estate boom. What
               changes is the vocabulary, not the system. <TextLink href="/contact">Tell us what your entrance looks like.</TextLink>
             </p>
+            <div className="mt-8">
+              <Button href="/how-it-works" kind="outline-dark">
+                See How It Works
+              </Button>
+            </div>
           </div>
         </div>
       </Section>
@@ -148,32 +146,6 @@ export default function Home() {
           </TextLink>{" "}
           and we will say whether this helps.
         </p>
-      </Section>
-
-      <Section tone="light">
-        <SectionIntro title="From the door to the office, in one line.">
-          <Lede>
-            The four parts pass the same record along, so nothing is re-typed between the gate log and the report at the
-            end of term.
-          </Lede>
-        </SectionIntro>
-        <ol className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {pipeline.map((s, i) => (
-            <li key={s.title} className="panel-outline-light p-7">
-              <Illustration name={s.art} className="mx-auto mb-5 max-w-[200px]" />
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber font-semibold tabular-nums text-teal">
-                {i + 1}
-              </span>
-              <h3 className="type-item mt-5 text-ink">{s.title}</h3>
-              <p className="mt-2 leading-relaxed text-ink-body">{s.text}</p>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-10">
-          <Button href="/how-it-works" kind="outline-dark">
-            See How It Works
-          </Button>
-        </div>
       </Section>
 
       <Section tone="cream">
