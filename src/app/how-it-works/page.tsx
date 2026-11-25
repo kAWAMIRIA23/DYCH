@@ -35,9 +35,10 @@ const parts: {
   {
     id: "attendance",
     name: "Attendance",
-    image: "/images/screen-register.jpg",
-    imageAlt: "A class register screen in Smart Vizion, already filled in from the gate with arrival times",
-    caption: "Illustrative screen with example data",
+    image: "/images/attendance-office.jpg",
+    imageAlt: "A member of school staff at a desktop computer showing a student attendance dashboard with present, late and absent statuses",
+    imageRatio: "aspect-[11/6]",
+    caption: "Illustrative image",
     tone: "cream",
     intro: "The entry event is the attendance record. There is no second step for anyone to remember, and no paper register to transcribe afterwards.",
     quote: "The walk through the gate is the register entry. Nothing is transcribed afterwards, and nothing waits for a teacher to find a moment.",
