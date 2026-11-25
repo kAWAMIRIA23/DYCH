@@ -111,7 +111,7 @@ export default function HowItWorksPage() {
               </blockquote>
             </div>
             {p.image && <CirclePhoto src={p.image} alt={p.imageAlt ?? ""} />}
-            {p.illustration && <Illustration name={p.illustration} className="mx-auto max-w-[380px]" />}
+            {p.illustration && <Illustration name={p.illustration} dark={p.tone === "dark"} className="mx-auto max-w-[380px]" />}
           </div>
           <div className="mt-14">
             <Details

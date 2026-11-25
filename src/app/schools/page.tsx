@@ -36,7 +36,7 @@ function Capability({
           </Lede>
         </div>
         {image && <CirclePhoto src={image} alt={imageAlt} />}
-        {illustration && <Illustration name={illustration} className="mx-auto max-w-[380px]" />}
+        {illustration && <Illustration name={illustration} dark={tone === "dark"} className="mx-auto max-w-[380px]" />}
       </div>
       <div className="mt-14">
         <Details tone={tone} items={items} />

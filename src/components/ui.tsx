@@ -207,22 +207,23 @@ export function Cta({ title, children, button = "Book a Demo" }: { title: ReactN
   );
 }
 
-/** One of the bold-filled line illustrations in /public/illustrations.
+/** One of the line illustrations in /public/illustrations: "Teal and amber"
+    for light grounds and cream cards, "Night" (dark/) on dark teal sections.
     Decorative by default (the text beside it says the same thing). */
 export function Illustration({
   name,
   alt = "",
   className = "",
-  plain = false,
+  dark = false,
 }: {
   name: string;
   alt?: string;
   className?: string;
-  plain?: boolean;
+  dark?: boolean;
 }) {
   return (
     <Image
-      src={`/illustrations/${plain ? "plain/" : ""}${name}.png`}
+      src={`/illustrations/${dark ? "dark/" : ""}${name}.png`}
       alt={alt}
       width={1200}
       height={1200}
