@@ -190,8 +190,13 @@ export default function Home() {
             </dl>
           </div>
           <div className="space-y-8">
-            <CirclePhoto src="/images/phone.jpg" alt="A parent's phone showing a check-in notification" ratio="aspect-[4/5]" />
-            <div className="panel-outline relative p-7 text-cream">
+            <CirclePhoto
+              src="/images/parent-market.jpg"
+              alt="A parent at an outdoor market, near generators, reading a DYCH Parent App check-in notification on an older smartphone"
+              ratio="aspect-[16/10]"
+              caption="Illustrative image"
+            />
+            <div className="panel-outline relative bg-teal p-7 text-cream">
               <p className="type-item">All face data is matched and encrypted on-device. No photos ever leave the school.</p>
               <p className="mt-3 leading-relaxed text-mist">
                 Recognition runs on a unit at your site, not on a server elsewhere. That is why the gate survives an
