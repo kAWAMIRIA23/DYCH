@@ -15,6 +15,7 @@ const parts: {
   sees: string;
   image?: string;
   imageAlt?: string;
+  caption?: string;
   illustration?: string;
 }[] = [
   {
@@ -33,7 +34,9 @@ const parts: {
   {
     id: "attendance",
     name: "Attendance",
-    illustration: "register",
+    image: "/images/screen-register.jpg",
+    imageAlt: "A class register screen in Smart Vizion, already filled in from the gate with arrival times",
+    caption: "Illustrative screen with example data",
     tone: "cream",
     intro: "The entry event is the attendance record. There is no second step for anyone to remember, and no paper register to transcribe afterwards.",
     quote: "The walk through the gate is the register entry. Nothing is transcribed afterwards, and nothing waits for a teacher to find a moment.",
@@ -58,7 +61,9 @@ const parts: {
   {
     id: "records",
     name: "Records",
-    illustration: "records",
+    image: "/images/screen-records.jpg",
+    imageAlt: "A Smart Vizion records screen with live counts, attendance by class and a searchable entry log",
+    caption: "Illustrative screen with example data",
     tone: "light",
     intro: "Everything above produces records. This is where they become something a head teacher can take into a meeting.",
     quote: "The reports are drawn from the entry and exit events themselves. Nobody assembles them by hand, so the figures and the gate cannot disagree.",
@@ -110,7 +115,7 @@ export default function HowItWorksPage() {
                 {p.quote}
               </blockquote>
             </div>
-            {p.image && <CirclePhoto src={p.image} alt={p.imageAlt ?? ""} />}
+            {p.image && <CirclePhoto src={p.image} alt={p.imageAlt ?? ""} caption={p.caption} />}
             {p.illustration && <Illustration name={p.illustration} dark={p.tone === "dark"} className="mx-auto max-w-[380px]" />}
           </div>
           <div className={`relative ${p.image ? "mt-14 md:mt-28" : "mt-14"}`}>

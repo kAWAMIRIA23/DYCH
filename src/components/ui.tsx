@@ -120,8 +120,18 @@ export function PageHeader({
 }
 
 /** A photo in a teal frame with the amber circle behind it, from the visitor-pass sample. */
-export function CirclePhoto({ src, alt, ratio = "aspect-[4/3]" }: { src: string; alt: string; ratio?: string }) {
-  return (
+export function CirclePhoto({
+  src,
+  alt,
+  ratio = "aspect-[4/3]",
+  caption,
+}: {
+  src: string;
+  alt: string;
+  ratio?: string;
+  caption?: string;
+}) {
+  const photo = (
     <div className="relative mx-auto w-full max-w-[480px]">
       <div
         className="absolute left-1/2 top-1/2 aspect-square w-[115%] -translate-x-[42%] -translate-y-1/2 rounded-full bg-amber"
@@ -131,6 +141,13 @@ export function CirclePhoto({ src, alt, ratio = "aspect-[4/3]" }: { src: string;
         <Image src={src} alt={alt} fill quality={90} sizes="(min-width: 768px) 40vw, 90vw" className="object-cover" />
       </div>
     </div>
+  );
+  if (!caption) return photo;
+  return (
+    <figure className="mx-auto w-full max-w-[480px]">
+      {photo}
+      <figcaption className="relative mt-4 text-right text-sm text-ink-sub">{caption}</figcaption>
+    </figure>
   );
 }
 
