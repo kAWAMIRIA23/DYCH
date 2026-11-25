@@ -11,7 +11,7 @@ export function Footer() {
             <Image src="/images/dych-icon.png" alt="" width={32} height={32} className="rounded-full" />
             <span className="font-display text-[18px] font-semibold tracking-tight">DYCH Technologies</span>
           </Link>
-          <p className="mt-5 max-w-[34ch] text-[15px] leading-relaxed text-mist">
+          <p className="mt-5 measure-body text-[15px] leading-relaxed text-mist">
             Facial-recognition entry, automatic attendance and real-time alerts, for schools and for business across
             Uganda and the wider region.
           </p>

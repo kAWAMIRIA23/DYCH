@@ -14,16 +14,16 @@ export default function ContactPage() {
       />
       <Container className="relative grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
         <div className="min-w-0">
-          <h1 className="max-w-[14ch] text-[clamp(2.6rem,5.8vw,5.2rem)] font-semibold leading-none tracking-[-0.035em]">
+          <h1 className="measure-heading type-page">
             Talk to the team in Kampala.
           </h1>
-          <p className="mt-7 max-w-[50ch] text-lg leading-relaxed text-mist">
+          <p className="mt-7 measure-body text-lg leading-relaxed text-mist">
             Tell us the size of your roll and how attendance is taken today, and we will come back with what an
             installation would involve at your site. A site assessment costs nothing and ends with a written scope.
           </p>
 
           <div className="mt-12 rounded-[14px] bg-cream p-7 text-ink">
-            <h2 className="text-xl font-semibold">Prefer WhatsApp?</h2>
+            <h2 className="type-item">Prefer WhatsApp?</h2>
             <p className="mt-2 leading-relaxed text-ink-body">
               It is the quickest way to reach us, and you will get a person rather than a ticket number.
             </p>

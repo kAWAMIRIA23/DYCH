@@ -60,13 +60,13 @@ export default function ProductPage() {
       <Section tone="light">
         <ol className="grid gap-10 md:grid-cols-3">
           {steps.map((s, i) => (
-            <li key={s.title} className="border-t-4 border-amber pt-5">
+            <li key={s.title} className="border-t border-ink/15 pt-5">
               <Illustration name={s.art} className="mx-auto mb-6 max-w-[260px]" />
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber font-semibold text-teal">{i + 1}</span>
-              <h2 className="mt-5 text-2xl font-semibold leading-tight tracking-tight text-ink">{s.title}</h2>
+              <h2 className="type-item mt-5 text-ink">{s.title}</h2>
               <p className="mt-3 leading-relaxed text-ink-body">{s.text}</p>
               {s.link && (
-                <Link href={s.link.href} className="mt-4 inline-block font-semibold text-ink underline decoration-amber decoration-2 underline-offset-4">
+                <Link href={s.link.href} className="mt-4 link inline-block text-ink">
                   {s.link.label}
                 </Link>
               )}
@@ -91,13 +91,13 @@ export default function ProductPage() {
       <Section id="visitor-management" tone="cream">
         <div className="grid gap-14 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div className="min-w-0">
-            <H2 className="max-w-[16ch]">Visitor Management</H2>
-            <Lede className="mt-6 max-w-[52ch]">
+            <H2 className="measure-heading">Visitor Management</H2>
+            <Lede className="mt-6 measure-body">
               The paper visitor book replaced, rather than digitised alongside. A visitor is recorded on the way in and
               on the way out, against the person or the department they came to see, so the question of who was on site
               last Tuesday has one answer instead of a search through a drawer.
             </Lede>
-            <Lede className="mt-4 max-w-[52ch]">
+            <Lede className="mt-4 measure-body">
               It runs on the same unit as recognition and writes to the same record, which is why it is part of Smart
               Vizion rather than something else to buy and connect.
             </Lede>

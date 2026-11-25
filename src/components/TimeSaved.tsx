@@ -31,7 +31,7 @@ function Choice({
   hint: string;
 }) {
   return (
-    <fieldset className="border-t border-ink/20 pt-6">
+    <fieldset className="border-t border-ink/15 pt-6">
       <div className="flex items-baseline justify-between gap-4">
         <legend className="font-semibold text-ink">{legend}</legend>
         <span className="font-display text-2xl font-semibold tabular-nums text-ink">
@@ -104,7 +104,7 @@ export function TimeSaved() {
           DYCH Technologies. One scan per person per day. 5 school days a week. Departures, second entrances and
           visitors are not counted, so the real figure is higher.
         </p>
-        <Link href="/how-it-works" className="mt-5 inline-block font-semibold text-apricot underline underline-offset-4">
+        <Link href="/how-it-works" className="mt-5 link inline-block text-apricot">
           How does this work?
         </Link>
       </div>

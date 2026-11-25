@@ -103,17 +103,17 @@ export default function HowItWorksPage() {
               <H2 tone={p.tone} className="mt-6">
                 {p.name}
               </H2>
-              <Lede tone={p.tone} className="mt-5 max-w-[56ch]">
+              <Lede tone={p.tone} className="mt-5 measure-body">
                 {p.intro}
               </Lede>
-              <blockquote className={`mt-8 max-w-[56ch] border-l-4 border-amber pl-5 text-xl font-semibold leading-snug ${p.tone === "dark" ? "text-cream" : "text-ink"}`}>
+              <blockquote className={`type-item mt-8 measure-body border-l-2 pl-5 ${p.tone === "dark" ? "border-teal-line text-cream" : "border-ink/20 text-ink"}`}>
                 {p.quote}
               </blockquote>
             </div>
             {p.image && <CirclePhoto src={p.image} alt={p.imageAlt ?? ""} />}
             {p.illustration && <Illustration name={p.illustration} dark={p.tone === "dark"} className="mx-auto max-w-[380px]" />}
           </div>
-          <div className="mt-14">
+          <div className={`relative ${p.image ? "mt-14 md:mt-28" : "mt-14"}`}>
             <Details
               tone={p.tone}
               cols={3}
@@ -158,7 +158,7 @@ export default function HowItWorksPage() {
           {stages.map((s, i) => (
             <li key={s.title} className="rounded-[14px] bg-teal p-7 text-cream">
               <span className="text-sm font-semibold text-apricot">Stage {i + 1}</span>
-              <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
+              <h3 className="type-item mt-5">{s.title}</h3>
               <p className="mt-2 leading-relaxed text-mist">{s.text}</p>
             </li>
           ))}

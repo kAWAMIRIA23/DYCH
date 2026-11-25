@@ -29,7 +29,7 @@ export function Hero() {
           in real time.
         </h1>
         <div>
-          <p className="max-w-[44ch] text-lg leading-relaxed text-cream-soft">
+          <p className="measure-body text-lg leading-relaxed text-cream-soft">
             Cards, PINs and paper registers are easy to share, forget or fake. Our system uses the face as the
             credential: cameras recognise enrolled people as they walk in, mark presence automatically, and flag
             anyone the system does not know.

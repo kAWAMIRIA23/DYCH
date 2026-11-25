@@ -23,7 +23,7 @@ export default function AboutPage() {
       </PageHeader>
 
       <Section tone="light">
-        <H2 className="max-w-[22ch]">
+        <H2 className="measure-heading">
           An organisation already knows who should be on its premises. It just has no reliable way to prove it.
         </H2>
         <div className="mt-10 grid gap-6 md:grid-cols-2 md:gap-12">
@@ -45,14 +45,14 @@ export default function AboutPage() {
         <div className="grid gap-4 md:grid-cols-2">
           <div className="rounded-[14px] bg-cream p-8 text-ink">
             <h2 className="text-sm font-semibold text-violet">Vision</h2>
-            <p className="mt-4 text-xl font-semibold leading-snug">
+            <p className="type-item mt-4">
               To be Africa’s premier driver of industrial and digital transformation, pioneering intelligent automation
               systems that empower enterprises to build smarter, resilient, and forward-ready operations.
             </p>
           </div>
           <div className="rounded-[14px] bg-cream p-8 text-ink">
             <h2 className="text-sm font-semibold text-violet">Mission</h2>
-            <p className="mt-4 text-xl font-semibold leading-snug">
+            <p className="type-item mt-4">
               To accelerate enterprise efficiency and sustainable growth across Africa by engineering robust industrial
               automation and intelligent software solutions, delivered with technical precision, integrity, and
               client-first service.
@@ -72,7 +72,7 @@ export default function AboutPage() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-[14px] border-[6px] border-teal bg-teal">
                 <Image src={t.image} alt={t.name} fill sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" className="object-cover object-top" />
               </div>
-              <p className="mt-4 text-xl font-semibold text-ink">{t.name}</p>
+              <p className="type-item mt-4 text-ink">{t.name}</p>
               <p className="text-ink-body">{t.role}</p>
             </li>
           ))}
@@ -83,7 +83,7 @@ export default function AboutPage() {
         <div className="grid gap-10 md:grid-cols-[1fr_1.3fr] md:gap-16">
           <div>
             <H2>Where we operate</H2>
-            <p className="mt-6 text-xl font-semibold text-ink">Kampala, Uganda</p>
+            <p className="type-item mt-6 text-ink">Kampala, Uganda</p>
           </div>
           <div className="space-y-4">
             <Lede>
@@ -94,7 +94,7 @@ export default function AboutPage() {
               We are early, and the deployment list is short. That is on purpose for now: the people who built the
               system are the ones installing it, and there is a limit to how many gates that can cover well in a term.
             </Lede>
-            <Link href="/schools" className="inline-block font-semibold text-ink underline decoration-amber decoration-2 underline-offset-4">
+            <Link href="/schools" className="link inline-block text-ink">
               Where we are so far
             </Link>
           </div>

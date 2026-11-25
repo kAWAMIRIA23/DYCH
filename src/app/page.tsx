@@ -21,24 +21,28 @@ const jobs = [
     title: "Recognition at the entrance",
     text: "A face matched against your own enrolled people as they walk in, so you know who is on the premises and who is not, without anyone walking a clipboard to the perimeter.",
     href: "/schools#security",
+    more: "How recognition works",
   },
   {
     icon: ClipboardCheck,
     title: "Attendance and timekeeping",
     text: "Arrival and departure recorded as they happen, against your own hours and late rules. No manual register, so no transcription errors to chase at the end of the month.",
     href: "/schools#attendance",
+    more: "How attendance is recorded",
   },
   {
     icon: BellRing,
     title: "Alerts to the right people",
     text: "A notification carrying the photo, so whoever gets it can see the match was right. You set how soon after the scan it goes; SMS and WhatsApp follow where it goes unopened.",
     href: "/schools#communication",
+    more: "How alerts are sent",
   },
   {
     icon: TabletSmartphone,
     title: "The screen on the door",
     text: "One tablet instead of a register, a visitor book and a pass list. It tells the person on duty what to do for each arrival: allow, late, stop or unknown, and keeps working when the connection drops.",
     href: "/schools#guard-app",
+    more: "How the gate screen works",
   },
 ];
 
@@ -70,9 +74,9 @@ export default function Home() {
         <SectionIntro title="Right now, access and attendance run on trust and paper.">
           <Lede>Six things most premises still do the hard way, and what each one becomes.</Lede>
         </SectionIntro>
-        <dl className="mt-14 border-t border-ink/20">
+        <dl className="mt-14 border-t border-ink/15">
           {problems.map(([p, a]) => (
-            <div key={p} className="grid gap-2 border-b border-ink/20 py-6 md:grid-cols-[1fr_1.4fr] md:gap-10">
+            <div key={p} className="grid gap-2 border-b border-ink/15 py-6 md:grid-cols-[1fr_1.4fr] md:gap-10">
               <dt className="text-lg font-semibold text-ink">{p}</dt>
               <dd className="leading-relaxed text-ink-body">{a}</dd>
             </div>
@@ -83,8 +87,8 @@ export default function Home() {
       <Section tone="cream">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <H2 className="max-w-[14ch]">Four jobs the front desk stops doing by hand.</H2>
-            <Lede className="mt-6 max-w-[46ch]">
+            <H2 className="measure-heading">Four jobs the front desk stops doing by hand.</H2>
+            <Lede className="mt-6 measure-body">
               One installation covers the entrance, the attendance record, the people who need telling, and the screen
               the officer on the door actually holds. Each part works on its own and gets sharper alongside the others.
             </Lede>
@@ -100,23 +104,24 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <ul className="border-t border-ink/20">
-              {jobs.map((j) => (
-                <li key={j.title} className="grid grid-cols-[auto_1fr] gap-x-5 border-b border-ink/20 py-8">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-amber" aria-hidden="true">
+            {/* Dividers start at the text edge, not under the icons. */}
+            <ul>
+              {jobs.map((j, i) => (
+                <li key={j.title} className="grid grid-cols-[auto_1fr] gap-x-5">
+                  <span className="mt-8 flex h-11 w-11 items-center justify-center rounded-full bg-amber" aria-hidden="true">
                     <j.icon className="h-5 w-5 text-teal" />
                   </span>
-                  <div>
-                    <h3 className="text-2xl font-semibold tracking-tight text-ink">{j.title}</h3>
-                    <p className="mt-2 max-w-[52ch] text-[17px] leading-relaxed text-ink-body">{j.text}</p>
-                    <Link href={j.href} className="mt-3 inline-block font-semibold text-ink underline decoration-amber decoration-2 underline-offset-4">
-                      Read more
+                  <div className={`border-b border-ink/15 py-8 ${i === 0 ? "border-t" : ""}`}>
+                    <h3 className="type-item text-ink">{j.title}</h3>
+                    <p className="mt-2 measure-body text-[17px] leading-relaxed text-ink-body">{j.text}</p>
+                    <Link href={j.href} className="link mt-3 inline-block text-ink">
+                      {j.more}
                     </Link>
                   </div>
                 </li>
               ))}
             </ul>
-            <p className="mt-8 max-w-[56ch] leading-relaxed text-ink-body">
+            <p className="mt-8 measure-body leading-relaxed text-ink-body">
               The same four run at a school gate, a factory turnstile, a clinic reception and an estate boom. What
               changes is the vocabulary, not the system. <TextLink href="/contact">Tell us what your entrance looks like.</TextLink>
             </p>
@@ -135,7 +140,7 @@ export default function Home() {
         <div className="mt-14">
           <SectorPicker sectors={sectors} />
         </div>
-        <p className="mt-10 max-w-[70ch] leading-relaxed text-mist">
+        <p className="mt-10 measure-wide leading-relaxed text-mist">
           Running something that is not on this list? The questions are the same — who is this person, are they
           allowed here now, when did they arrive and leave, and who else came through.{" "}
           <TextLink href="/contact" tone="dark">
@@ -159,7 +164,7 @@ export default function Home() {
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber font-semibold tabular-nums text-teal">
                 {i + 1}
               </span>
-              <h3 className="mt-5 text-xl font-semibold text-ink">{s.title}</h3>
+              <h3 className="type-item mt-5 text-ink">{s.title}</h3>
               <p className="mt-2 leading-relaxed text-ink-body">{s.text}</p>
             </li>
           ))}
@@ -187,24 +192,24 @@ export default function Home() {
       <Section tone="dark">
         <div className="grid gap-14 md:grid-cols-[1.1fr_0.9fr] md:items-center lg:gap-20">
           <div className="min-w-0">
-            <H2 tone="dark" className="max-w-[16ch]">
+            <H2 tone="dark" className="measure-heading">
               Built for the conditions it actually runs in.
             </H2>
-            <Lede tone="dark" className="mt-6 max-w-[50ch]">
+            <Lede tone="dark" className="mt-6 measure-body">
               Patchy power, thin bandwidth, and a parent body reachable on a basic handset long before it is reachable on
               an app. Those are constraints here, not edge cases, so they shaped the design rather than the
               troubleshooting page.
             </Lede>
             <dl className="mt-10 grid gap-8 sm:grid-cols-2">
-              <div className="border-t-4 border-amber pt-5">
-                <dt className="text-xl font-semibold">Offline first</dt>
+              <div className="border-t border-teal-line pt-5">
+                <dt className="type-item">Offline first</dt>
                 <dd className="mt-2 leading-relaxed text-mist">
                   The gate keeps reading and the register keeps writing when the line drops. Everything syncs once
                   connectivity returns.
                 </dd>
               </div>
-              <div className="border-t-4 border-amber pt-5">
-                <dt className="text-xl font-semibold">On the phone parents already own</dt>
+              <div className="border-t border-teal-line pt-5">
+                <dt className="type-item">On the phone parents already own</dt>
                 <dd className="mt-2 leading-relaxed text-mist">
                   A push notification reaches a parent on the school’s own timing. Where there is no smartphone, the same
                   alert falls back to SMS, so no family is left out.
@@ -215,12 +220,12 @@ export default function Home() {
           <div className="space-y-8">
             <CirclePhoto src="/images/phone.jpg" alt="A parent's phone showing a check-in notification" ratio="aspect-[4/5]" />
             <div className="relative rounded-[14px] bg-cream p-7 text-ink">
-              <p className="text-xl font-semibold">All face data is matched and encrypted on-device. No photos ever leave the school.</p>
+              <p className="type-item">All face data is matched and encrypted on-device. No photos ever leave the school.</p>
               <p className="mt-3 leading-relaxed text-ink-body">
                 Recognition runs on a unit at your site, not on a server elsewhere. That is why the gate survives an
                 outage, and why there is nothing to upload in the first place.
               </p>
-              <Link href="/security-and-trust" className="mt-4 inline-block font-semibold text-violet underline underline-offset-4">
+              <Link href="/security-and-trust" className="mt-4 link inline-block text-ink">
                 How we handle children’s data
               </Link>
             </div>

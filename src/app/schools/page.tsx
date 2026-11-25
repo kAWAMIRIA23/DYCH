@@ -28,17 +28,17 @@ function Capability({
     <Section id={id} tone={tone}>
       <div className={`grid gap-12 ${image || illustration ? "md:grid-cols-[1.1fr_0.9fr] md:items-center lg:gap-20" : ""}`}>
         <div className="min-w-0">
-          <H2 tone={tone} className="max-w-[18ch]">
+          <H2 tone={tone} className="measure-heading">
             {title}
           </H2>
-          <Lede tone={tone} className="mt-6 max-w-[60ch]">
+          <Lede tone={tone} className="mt-6 measure-body">
             {intro}
           </Lede>
         </div>
         {image && <CirclePhoto src={image} alt={imageAlt} />}
         {illustration && <Illustration name={illustration} dark={tone === "dark"} className="mx-auto max-w-[380px]" />}
       </div>
-      <div className="mt-14">
+      <div className={`relative ${image ? "mt-14 md:mt-28" : "mt-14"}`}>
         <Details tone={tone} items={items} />
       </div>
     </Section>
@@ -168,15 +168,15 @@ export default function SchoolsPage() {
       />
 
       <Section tone="dark" className="border-t border-teal-line">
-        <H2 tone="dark" className="max-w-[18ch]">We are early, and we would rather say so.</H2>
-        <Lede tone="dark" className="mt-6 max-w-[62ch]">
+        <H2 tone="dark" className="measure-heading">We are early, and we would rather say so.</H2>
+        <Lede tone="dark" className="mt-6 measure-body">
           This is the part of the page where most suppliers would show you a wall of school badges. We are not going to
           invent one. Here is where DYCH actually is, what the first deployment involved, and what we will publish the
           moment a school has reported it.
         </Lede>
 
         <div className="mt-14 rounded-[14px] bg-cream p-7 text-ink sm:p-10">
-          <h3 className="max-w-[30ch] text-2xl font-semibold leading-tight tracking-tight">
+          <h3 className="type-item measure-body">
             The first deployment: one school, one gate, and a register that stopped eating the first lesson.
           </h3>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -209,8 +209,8 @@ export default function SchoolsPage() {
       </Section>
 
       <Section tone="light">
-        <H2 className="max-w-[18ch]">The kind of school this fits.</H2>
-        <Lede className="mt-6 max-w-[60ch]">
+        <H2 className="measure-heading">The kind of school this fits.</H2>
+        <Lede className="mt-6 measure-body">
           Not a list of names you would have to take on trust. What the system actually copes with, so you can tell in a
           minute whether it is worth an hour of your time.
         </Lede>
@@ -221,7 +221,7 @@ export default function SchoolsPage() {
 
       <Section tone="cream">
         <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:gap-16">
-          <H2 className="max-w-[14ch]">What being early actually gets you.</H2>
+          <H2 className="measure-heading">What being early actually gets you.</H2>
           <div className="space-y-4">
             <Lede>
               A short list of schools means the people who built this are the people who install it, and they have time
@@ -232,7 +232,7 @@ export default function SchoolsPage() {
               It also means we will tell you if your school is not a good fit. We can afford to, and we would rather not
               learn it after the cameras are up.
             </Lede>
-            <Link href="/contact" className="inline-block font-semibold text-ink underline decoration-amber decoration-2 underline-offset-4">
+            <Link href="/contact" className="link inline-block text-ink">
               Talk to the people who would install it
             </Link>
           </div>

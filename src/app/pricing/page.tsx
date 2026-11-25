@@ -51,7 +51,7 @@ export default function PricingPage() {
               className={`flex flex-col rounded-[14px] p-8 ${p.badge ? "bg-apricot text-teal" : "bg-cream text-ink"}`}
             >
               <div className="flex items-center justify-between gap-4">
-                <h2 className="text-2xl font-semibold">{p.name}</h2>
+                <h2 className="type-item">{p.name}</h2>
                 {p.badge && <span className="rounded-lg bg-teal px-3 py-1 text-sm font-semibold text-apricot">{p.badge}</span>}
               </div>
               <p className="mt-3 leading-relaxed text-ink-body">{p.text}</p>
@@ -67,7 +67,7 @@ export default function PricingPage() {
                 <Link href="/contact" className="btn border-white bg-teal text-cream hover:bg-teal-raised">
                   Book a site visit
                 </Link>
-                <a href="#why-no-price" className="font-semibold underline decoration-2 underline-offset-4">
+                <a href="#why-no-price" className="link">
                   Why no price?
                 </a>
               </div>
@@ -78,7 +78,7 @@ export default function PricingPage() {
 
       <Section id="why-no-price" tone="light">
         <div className="grid gap-8 md:grid-cols-[1fr_1.3fr] md:gap-16">
-          <H2 className="max-w-[14ch]">Why there is no price on this page.</H2>
+          <H2 className="measure-heading">Why there is no price on this page.</H2>
           <div className="space-y-4">
             <Lede>
               Because we would be guessing. The number depends on how many entry points you have, how many pupils are on
@@ -96,16 +96,16 @@ export default function PricingPage() {
 
       <Section tone="cream">
         <SectionIntro title="What schools ask before they sign." />
-        <div className="mt-12 border-t border-ink/20">
+        <div className="mt-12 border-t border-ink/15">
           {faqs.map((f) => (
-            <details key={f.q} className="group border-b border-ink/20">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-xl font-semibold text-ink">
+            <details key={f.q} className="group border-b border-ink/15">
+              <summary className="type-item flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-ink">
                 {f.q}
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber text-lg text-teal transition-transform group-open:rotate-45" aria-hidden="true">
                   +
                 </span>
               </summary>
-              <p className="max-w-[70ch] pb-7 leading-relaxed text-ink-body">{f.a}</p>
+              <p className="measure-wide pb-7 leading-relaxed text-ink-body">{f.a}</p>
             </details>
           ))}
         </div>

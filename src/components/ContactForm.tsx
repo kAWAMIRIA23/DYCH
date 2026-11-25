@@ -33,7 +33,7 @@ export function ContactForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-5 rounded-[14px] bg-cream p-6 text-ink shadow-[0_30px_60px_-30px_rgb(0_0_0/0.6)] sm:p-8">
       <div>
-        <h2 className="text-2xl font-semibold">Or send us the details</h2>
+        <h2 className="type-item">Or send us the details</h2>
         <p className="mt-2 leading-relaxed text-ink-body">
           The more you can tell us about the site, the more useful the first conversation is.
         </p>

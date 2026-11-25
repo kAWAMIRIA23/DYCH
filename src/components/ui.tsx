@@ -55,9 +55,7 @@ export function TextLink({ href, tone = "light", children }: { href: string; ton
   return (
     <Link
       href={href}
-      className={`font-semibold underline decoration-2 underline-offset-[6px] ${
-        tone === "dark" ? "text-apricot decoration-amber hover:text-cream" : "text-ink decoration-amber hover:decoration-ink"
-      }`}
+      className={`link-inline ${tone === "dark" ? "text-cream" : "text-ink"}`}
     >
       {children}
     </Link>
@@ -67,7 +65,7 @@ export function TextLink({ href, tone = "light", children }: { href: string; ton
 export function H2({ children, tone = "light", className = "" }: { children: ReactNode; tone?: Tone; className?: string }) {
   return (
     <h2
-      className={`text-balance text-[clamp(2.1rem,4.2vw,3.5rem)] font-semibold leading-[1.03] tracking-[-0.03em] ${
+      className={`text-balance type-section ${
         tone === "dark" ? "text-cream" : "text-ink"
       } ${className}`}
     >
@@ -86,10 +84,10 @@ export function Lede({ children, tone = "light", className = "" }: { children: R
 export function SectionIntro({ title, tone = "light", children }: { title: ReactNode; tone?: Tone; children?: ReactNode }) {
   return (
     <div className="grid gap-6 md:grid-cols-[1.15fr_1fr] md:items-start md:gap-12">
-      <H2 tone={tone} className="max-w-[18ch]">
+      <H2 tone={tone} className="measure-heading">
         {title}
       </H2>
-      {children && <div className="max-w-[52ch] space-y-4">{children}</div>}
+      {children && <div className="measure-body space-y-4">{children}</div>}
     </div>
   );
 }
@@ -110,10 +108,10 @@ export function PageHeader({
     <section className="relative overflow-hidden bg-teal pb-20 pt-36 text-cream sm:pb-28 sm:pt-44">
       <Container className={`grid gap-14 ${image ? "md:grid-cols-[1.15fr_0.85fr] md:items-center" : ""}`}>
         <div className="min-w-0">
-          <h1 className="max-w-[16ch] text-balance text-[clamp(2.6rem,5.8vw,5.2rem)] font-semibold leading-[1] tracking-[-0.03em] text-cream">
+          <h1 className="measure-heading text-balance type-page text-cream">
             {title}
           </h1>
-          {children && <div className="mt-7 max-w-[56ch] space-y-4 text-lg leading-relaxed text-mist">{children}</div>}
+          {children && <div className="mt-7 measure-body space-y-4 text-lg leading-relaxed text-mist">{children}</div>}
         </div>
         {image && <CirclePhoto src={image} alt={imageAlt} />}
       </Container>
@@ -150,8 +148,8 @@ export function Details({
   return (
     <dl className={`grid gap-x-10 gap-y-9 ${grid}`}>
       {items.map((it, i) => (
-        <div key={i} className={`border-t-4 pt-5 ${tone === "dark" ? "border-amber" : "border-amber"}`}>
-          <dt className={`text-xl font-semibold tracking-tight ${tone === "dark" ? "text-cream" : "text-ink"}`}>{it.title}</dt>
+        <div key={i} className={`border-t pt-5 ${tone === "dark" ? "border-teal-line" : "border-ink/15"}`}>
+          <dt className={`type-item ${tone === "dark" ? "text-cream" : "text-ink"}`}>{it.title}</dt>
           <dd className={`mt-2 leading-relaxed ${tone === "dark" ? "text-mist" : "text-ink-body"}`}>{it.text}</dd>
         </div>
       ))}
@@ -173,10 +171,10 @@ export function CreamCards({
       {items.map((it, i) => (
         <li key={i} className="flex flex-col rounded-[14px] bg-cream p-7 text-ink">
           {it.label && <span className="text-sm font-semibold text-violet">{it.label}</span>}
-          <h3 className={`text-xl font-semibold tracking-tight ${it.label ? "mt-5" : ""}`}>{it.title}</h3>
+          <h3 className={`type-item ${it.label ? "mt-5" : ""}`}>{it.title}</h3>
           <p className="mt-2 leading-relaxed text-ink-body">{it.text}</p>
           {it.link && (
-            <Link href={it.link.href} className="mt-auto pt-5 text-sm font-semibold text-violet underline underline-offset-4">
+            <Link href={it.link.href} className="link mt-auto pt-5 text-ink">
               {it.link.label}
             </Link>
           )}
@@ -197,7 +195,7 @@ export function Cta({ title, children, button = "Book a Demo" }: { title: ReactN
       <Container className="relative">
         <div className="max-w-[40rem]">
           <H2 tone="dark">{title}</H2>
-          {children && <Lede tone="dark" className="mt-6 max-w-[48ch]">{children}</Lede>}
+          {children && <Lede tone="dark" className="mt-6 measure-body">{children}</Lede>}
           <div className="mt-8">
             <Button href="/contact">{button}</Button>
           </div>

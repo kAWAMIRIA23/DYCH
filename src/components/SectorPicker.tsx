@@ -87,10 +87,10 @@ export function SectorPicker({ sectors }: { sectors: Sector[] }) {
               <p className="text-sm font-semibold tabular-nums text-ink-sub">
                 {i + 1} of {sectors.length}
               </p>
-              <h3 className="mt-1 text-[clamp(1.6rem,2.6vw,2rem)] font-semibold leading-tight tracking-[-0.02em]">{sec.title}</h3>
-              <p className="mt-4 max-w-[46ch] text-[17px] leading-relaxed text-ink-body">{sec.text}</p>
+              <h3 className="type-item mt-1">{sec.title}</h3>
+              <p className="mt-4 measure-body text-[17px] leading-relaxed text-ink-body">{sec.text}</p>
               {sec.link && (
-                <Link href={sec.link.href} className="mt-5 inline-block text-sm font-semibold text-violet underline underline-offset-4">
+                <Link href={sec.link.href} className="mt-5 link inline-block text-ink">
                   {sec.link.label}
                 </Link>
               )}

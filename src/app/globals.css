@@ -60,6 +60,70 @@ body {
   transition: background-color 150ms, border-color 150ms, color 150ms;
 }
 
+/* Links. Two kinds only.
+   link-inline: a link inside a sentence. Same colour as the text around it,
+   a thin underline so it never relies on colour alone, amber on hover.
+   link: a standalone link on its own line. No underline until hover. */
+@utility link-inline {
+  font-weight: 500;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: currentColor;
+  transition: text-decoration-color 150ms;
+  &:hover {
+    text-decoration-color: var(--color-amber);
+    text-decoration-thickness: 2px;
+  }
+}
+@utility link {
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 150ms;
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+/* Type scale. Five sizes, used everywhere; the hero headline is the fifth. */
+@utility type-page {
+  font-size: clamp(2.6rem, 5.8vw, 5.2rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+@utility type-section {
+  font-size: clamp(2.1rem, 4.2vw, 3.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+@utility type-item {
+  font-size: 1.375rem;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+@utility type-label {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* Three text widths. */
+@utility measure-heading {
+  max-width: 20ch;
+}
+@utility measure-body {
+  max-width: 60ch;
+}
+@utility measure-wide {
+  max-width: 70ch;
+}
+
 /* Every heading is set in the display face. Weights and sizes stay with
    each component; this only chooses the family and keeps lines balanced. */
 @layer base {

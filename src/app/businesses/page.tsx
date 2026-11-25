@@ -41,7 +41,7 @@ export default function BusinessesPage() {
       </Section>
 
       <Section tone="light">
-        <H2 className="max-w-[20ch]">Before you ask us anything, here is what we would say.</H2>
+        <H2 className="measure-heading">Before you ask us anything, here is what we would say.</H2>
         <div className="mt-12">
           <Details
             cols={3}

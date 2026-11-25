@@ -33,7 +33,7 @@ export default function ChurchesPage() {
       </PageHeader>
 
       <Section tone="light">
-        <Lede className="max-w-[70ch] text-xl">
+        <Lede className="measure-wide text-xl">
           DYCH is not church-management software and does not want to be. Giving, membership, pastoral care, rotas and
           ministry planning belong to the platform you already run, and we have no intention of asking you to move any
           of it. What we do is the physical layer around the building: who came to the office, which staff worked, and
@@ -42,11 +42,11 @@ export default function ChurchesPage() {
       </Section>
 
       <Section tone="dark">
-        <H2 tone="dark" className="max-w-[22ch]">Three places it helps, in the order most churches meet them.</H2>
+        <H2 tone="dark" className="measure-heading">Three places it helps, in the order most churches meet them.</H2>
         <div className="mt-12">
           <CreamCards items={places} cols={3} />
         </div>
-        <p className="mt-10 max-w-[70ch] leading-relaxed text-mist">
+        <p className="mt-10 measure-wide leading-relaxed text-mist">
           If the honest answer after a visit is that your welcome desk is working and nothing needs a camera, we will
           tell you that and leave you the checklist anyway.
         </p>

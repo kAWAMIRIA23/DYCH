@@ -61,7 +61,7 @@ export default function SecurityPage() {
             <li key={s.title} className="rounded-[14px] bg-cream p-7 text-ink">
               <Illustration name={s.art} className="mx-auto mb-6 max-w-[240px]" />
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-amber font-semibold text-teal">{i + 1}</span>
-              <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
+              <h3 className="type-item mt-5">{s.title}</h3>
               <p className="mt-2 leading-relaxed text-ink-body">{s.text}</p>
             </li>
           ))}
@@ -176,10 +176,10 @@ export default function SecurityPage() {
             site assessment and hold us to the answers.
           </Lede>
         </SectionIntro>
-        <ol className="mt-14 border-t border-ink/20">
+        <ol className="mt-14 border-t border-ink/15">
           {questions.map((q, i) => (
-            <li key={q} className="grid grid-cols-[3.5rem_1fr] items-baseline border-b border-ink/20 py-6">
-              <span className="text-2xl font-semibold tabular-nums text-ink-sub">{String(i + 1).padStart(2, "0")}</span>
+            <li key={q} className="grid grid-cols-[3.5rem_1fr] items-baseline border-b border-ink/15 py-6">
+              <span className="type-item tabular-nums text-ink-sub">{String(i + 1).padStart(2, "0")}</span>
               <p className="text-lg font-semibold leading-snug text-ink">{q}</p>
             </li>
           ))}
