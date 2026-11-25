@@ -69,8 +69,8 @@ export default function AboutPage() {
         <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {team.map((t) => (
             <li key={t.name}>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[4px] border-[6px] border-teal bg-teal">
-                <Image src={t.image} alt={t.name} fill sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" className="object-cover object-top" />
+              <div className="relative aspect-square overflow-hidden rounded-[4px] bg-teal">
+                <Image src={t.image} alt={t.name} fill quality={90} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" className="object-cover" />
               </div>
               <p className="type-item mt-4 text-ink">{t.name}</p>
               <p className="text-ink-body">{t.role}</p>
