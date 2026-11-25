@@ -3,7 +3,8 @@ import Link from "next/link";
 import { ScanFace, ClipboardCheck, BellRing, TabletSmartphone } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { TimeSaved } from "@/components/TimeSaved";
-import { Button, CirclePhoto, CreamCards, Cta, H2, Illustration, Lede, Section, SectionIntro, TextLink } from "@/components/ui";
+import { SectorPicker, type Sector } from "@/components/SectorPicker";
+import { Button, CirclePhoto, Cta, H2, Illustration, Lede, Section, SectionIntro, TextLink } from "@/components/ui";
 
 const problems = [
   ["Shared access cards", "The credential is the person, not a badge that can be lent, copied or left at home."],
@@ -42,15 +43,15 @@ const jobs = [
 ];
 
 const EDU = { href: "/schools", label: "See the education product" };
-const sectors = [
-  { title: "Corporate offices", text: "Staff timekeeping without clock cards. Reception sees who entered. Unknown faces become logged visitors rather than silent walk-ins, and HR gets a daily attendance export.", link: EDU },
-  { title: "Factories and warehouses", text: "Shift presence at the gate rather than at a desk. Late and absence records that stand up in payroll and in a safety briefing. Contractors logged at the entrance like everyone else." },
-  { title: "Construction and project sites", text: "Who is on site right now, which is the question that matters when something happens. Check-in for workers and subcontractors, a record of deliveries and inspectors, and tablets at the perimeter even when the office PC is elsewhere." },
-  { title: "Healthcare and clinics", text: "Staff attendance for rotas, controlled entry to restricted areas, and a visitor log for family and vendors. An audit trail for every time somebody was let through without a match." },
-  { title: "Hospitality and facilities", text: "Staff check-in for hotels, gyms and event venues. Members recognised at the door. Guests logged at reception instead of on a clipboard that walks off." },
-  { title: "Estates and gated communities", text: "Residents recognised at the boom or the pedestrian gate. Guests logged against the host expecting them. Release on the tablet when the network drops, syncing when it returns." },
-  { title: "Places of worship and NGOs", text: "Guest records on the days a building fills with people nobody recognises, hours for paid staff, and care around the rooms that need it.", link: EDU },
-  { title: "Education", text: "Pupil and staff attendance, alerts to guardians, and authorised pickup at the gate. The same engine as every card above, with the vocabulary a school uses.", link: EDU },
+const sectors: Sector[] = [
+  { title: "Corporate offices", art: "register", text: "Staff timekeeping without clock cards. Reception sees who entered. Unknown faces become logged visitors rather than silent walk-ins, and HR gets a daily attendance export.", link: EDU },
+  { title: "Factories and warehouses", art: "records", text: "Shift presence at the gate rather than at a desk. Late and absence records that stand up in payroll and in a safety briefing. Contractors logged at the entrance like everyone else." },
+  { title: "Construction and project sites", art: "guard-tablet", text: "Who is on site right now, which is the question that matters when something happens. Check-in for workers and subcontractors, a record of deliveries and inspectors, and tablets at the perimeter even when the office PC is elsewhere." },
+  { title: "Healthcare and clinics", art: "detect", text: "Staff attendance for rotas, controlled entry to restricted areas, and a visitor log for family and vendors. An audit trail for every time somebody was let through without a match." },
+  { title: "Hospitality and facilities", art: "faces", text: "Staff check-in for hotels, gyms and event venues. Members recognised at the door. Guests logged at reception instead of on a clipboard that walks off." },
+  { title: "Estates and gated communities", art: "boarding", text: "Residents recognised at the boom or the pedestrian gate. Guests logged against the host expecting them. Release on the tablet when the network drops, syncing when it returns." },
+  { title: "Places of worship and NGOs", art: "alerts", text: "Guest records on the days a building fills with people nobody recognises, hours for paid staff, and care around the rooms that need it.", link: EDU },
+  { title: "Education", art: "attendance", text: "Pupil and staff attendance, alerts to guardians, and authorised pickup at the gate. The same engine as every card above, with the vocabulary a school uses.", link: EDU },
 ];
 
 const pipeline = [
@@ -131,7 +132,7 @@ export default function Home() {
           </Lede>
         </SectionIntro>
         <div className="mt-14">
-          <CreamCards items={sectors} />
+          <SectorPicker sectors={sectors} />
         </div>
         <p className="mt-10 max-w-[70ch] leading-relaxed text-mist">
           Running something that is not on this list? The questions are the same — who is this person, are they
