@@ -194,7 +194,6 @@ export default function Home() {
               src="/images/parent-market.jpg"
               alt="A parent at an outdoor market, near generators, reading a DYCH Parent App check-in notification on an older smartphone"
               ratio="aspect-[16/10]"
-              caption="Illustrative image"
             />
             <div className="panel-outline relative bg-teal p-7 text-cream">
               <p className="type-item">All face data is matched and encrypted on-device. No photos ever leave the school.</p>

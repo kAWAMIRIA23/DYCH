@@ -38,7 +38,6 @@ const parts: {
     image: "/images/attendance-office.jpg",
     imageAlt: "A member of school staff at a desktop computer showing a student attendance dashboard with present, late and absent statuses",
     imageRatio: "aspect-[11/6]",
-    caption: "Illustrative image",
     tone: "cream",
     intro: "The entry event is the attendance record. There is no second step for anyone to remember, and no paper register to transcribe afterwards.",
     quote: "The walk through the gate is the register entry. Nothing is transcribed afterwards, and nothing waits for a teacher to find a moment.",
@@ -60,7 +59,6 @@ const parts: {
     image: "/images/parent-alert.jpg",
     imageAlt: "A parent at home smiling at her phone as a DYCH Parent App notification says Jesse checked in at 08:32",
     imageRatio: "aspect-[43/24]",
-    caption: "Illustrative image",
   },
   {
     id: "records",
@@ -68,7 +66,6 @@ const parts: {
     image: "/images/records-office.jpg",
     imageAlt: "A school administrator reviewing attendance records and reports on a desktop dashboard, with board report files beside him",
     imageRatio: "aspect-[43/24]",
-    caption: "Illustrative image",
     tone: "light",
     intro: "Everything above produces records. This is where they become something a head teacher can take into a meeting.",
     quote: "The reports are drawn from the entry and exit events themselves. Nobody assembles them by hand, so the figures and the gate cannot disagree.",
