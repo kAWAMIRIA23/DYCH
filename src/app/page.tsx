@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ScanFace, ClipboardCheck, BellRing, TabletSmartphone } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { TimeSaved } from "@/components/TimeSaved";
 import { SectorPicker, type Sector } from "@/components/SectorPicker";
@@ -14,6 +15,37 @@ const problems = [
   ["A weak door process", "Paired devices, named guard accounts, PIN overrides with a written reason, and an audit log none of them can edit."],
 ];
 
+const jobs = [
+  {
+    icon: ScanFace,
+    title: "Recognition at the entrance",
+    text: "A face matched against your own enrolled people as they walk in, so you know who is on the premises and who is not, without anyone walking a clipboard to the perimeter.",
+    href: "/schools#security",
+    more: "How recognition works",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Attendance and timekeeping",
+    text: "Arrival and departure recorded as they happen, against your own hours and late rules. No manual register, so no transcription errors to chase at the end of the month.",
+    href: "/schools#attendance",
+    more: "How attendance is recorded",
+  },
+  {
+    icon: BellRing,
+    title: "Alerts to the right people",
+    text: "A notification carrying the photo, so whoever gets it can see the match was right. You set how soon after the scan it goes; SMS and WhatsApp follow where it goes unopened.",
+    href: "/schools#communication",
+    more: "How alerts are sent",
+  },
+  {
+    icon: TabletSmartphone,
+    title: "The screen on the door",
+    text: "One tablet instead of a register, a visitor book and a pass list. It tells the person on duty what to do for each arrival: allow, late, stop or unknown, and keeps working when the connection drops.",
+    href: "/schools#guard-app",
+    more: "How the gate screen works",
+  },
+];
+
 const EDU = { href: "/schools", label: "See the education product" };
 const sectors: Sector[] = [
   { title: "Corporate offices", art: "register", text: "Staff timekeeping without clock cards. Reception sees who entered. Unknown faces become logged visitors rather than silent walk-ins, and HR gets a daily attendance export.", link: EDU },
@@ -26,91 +58,10 @@ const sectors: Sector[] = [
   { title: "Education", art: "attendance", text: "Pupil and staff attendance, alerts to guardians, and authorised pickup at the gate. The same engine as every sector above, with the vocabulary a school uses.", link: EDU },
 ];
 
-const doors = [
-  { title: "Schools", note: "Arrival, attendance, parents and the gate.", cta: "See it for schools", href: "/schools", image: "/images/gate.jpg", position: "object-center" },
-  { title: "Businesses", note: "Reception, workforce hours and controlled entry.", cta: "See it for a workplace", href: "/businesses", image: "/images/visitor.jpg", position: "object-[30%_50%]" },
-  { title: "Churches", note: "Guests, teams and the spaces that need care.", cta: "See it for a worship centre", href: "/churches", image: "/images/guard.jpg", position: "object-center" },
-];
-
-const morning = [
-  {
-    time: "07:30",
-    title: "The gate opens",
-    text: "A camera at the entry point matches each arriving face against the school’s own records, on a unit standing on site.",
-    more: "How recognition works",
-    href: "/schools#security",
-    image: "/images/arrival.jpg",
-    alt: "Pupils arriving through the school gate past the entry camera",
-  },
-  {
-    time: "07:42",
-    title: "The register writes itself",
-    text: "Arrival is logged the moment a face is matched. The class teacher opens a register that is already correct.",
-    more: "How attendance is recorded",
-    href: "/schools#attendance",
-    image: "/images/attendance-office.jpg",
-    alt: "A student attendance dashboard on a desktop screen",
-  },
-  {
-    time: "07:52",
-    title: "The parent is told",
-    text: "A push notification on the school’s chosen delay, with SMS behind it for families without a smartphone.",
-    more: "How alerts are sent",
-    href: "/schools#communication",
-    image: "/images/parent-market.jpg",
-    alt: "A parent at a market reading a check-in message on her phone",
-  },
-  {
-    time: "08:30",
-    title: "The office has the record",
-    text: "Late arrivals flagged, absences noticed, and an export ready for the board, without anyone assembling it by hand.",
-    more: "How records work",
-    href: "/how-it-works#records",
-    image: "/images/records-office.jpg",
-    alt: "An administrator reviewing attendance records and board reports",
-  },
-];
-
 export default function Home() {
   return (
     <>
       <Hero />
-
-      <section className="bg-paper py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-16">
-          <div className="text-center">
-            <h2 className="type-section mx-auto measure-heading text-ink">Every entrance knows who came through.</h2>
-            <p className="mx-auto mt-5 measure-body text-lg leading-relaxed text-ink-body">
-              One system for a school gate, a reception desk and a church foyer. Choose yours.
-            </p>
-          </div>
-          <ul className="mt-14 grid gap-4 md:grid-cols-3">
-            {doors.map((d) => (
-              <li key={d.href}>
-                <Link
-                  href={d.href}
-                  className="group relative isolate flex h-[340px] flex-col justify-end overflow-hidden rounded-[4px] p-7 text-cream md:h-[460px]"
-                >
-                  <Image
-                    src={d.image}
-                    alt=""
-                    fill
-                    quality={85}
-                    sizes="(min-width: 768px) 33vw, 90vw"
-                    className={`-z-20 object-cover transition-transform duration-500 group-hover:scale-[1.04] motion-reduce:transition-none ${d.position}`}
-                  />
-                  <span aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent from-30% to-[#021a1e]/95" />
-                  <h3 className="font-display text-[34px] font-semibold tracking-[-0.03em]">{d.title}</h3>
-                  <p className="mt-2 text-mist">{d.note}</p>
-                  <span className="mt-5 font-semibold text-apricot underline decoration-transparent decoration-2 underline-offset-4 group-hover:decoration-apricot">
-                    {d.cta}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
 
       <Section tone="light">
         <SectionIntro title="Right now, access and attendance run on trust and paper.">
@@ -127,45 +78,52 @@ export default function Home() {
       </Section>
 
       <Section tone="cream">
-        <SectionIntro title="One morning, from the gate to the office.">
-          <Lede>
-            One installation covers the entrance, the attendance record, the people who need telling, and the screen the
-            officer on the door actually holds. This is what that looks like before the first lesson.
-          </Lede>
-        </SectionIntro>
-        <ol className="relative mt-16">
-          <span
-            aria-hidden="true"
-            className="absolute bottom-2 left-[5px] top-2 w-0.5 bg-gradient-to-b from-amber to-amber/15 md:left-[109px]"
-          />
-          {morning.map((m) => (
-            <li key={m.time} className="relative grid gap-5 pb-16 pl-9 last:pb-0 md:grid-cols-[110px_minmax(0,1fr)_minmax(0,1fr)] md:gap-10 md:pl-0">
-              <span
-                aria-hidden="true"
-                className="absolute left-0 top-2 h-3.5 w-3.5 rounded-full bg-amber ring-[6px] ring-cream md:left-[103px]"
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <H2 className="measure-heading">Four jobs the front desk stops doing by hand.</H2>
+            <Lede className="mt-6 measure-body">
+              One installation covers the entrance, the attendance record, the people who need telling, and the screen
+              the officer on the door actually holds. Each part works on its own and gets sharper alongside the others.
+            </Lede>
+            <div className="relative mt-10 hidden aspect-[4/3] overflow-hidden rounded-[4px] border-[6px] border-teal lg:block">
+              <Image
+                src="/images/gate.jpg"
+                alt="Pupils walking through a school gate past an entry camera"
+                fill
+                quality={90}
+                sizes="40vw"
+                className="object-cover"
               />
-              <p className="font-display text-[28px] font-semibold tracking-[-0.03em] text-ink tabular-nums">{m.time}</p>
-              <div className="min-w-0 md:pl-8">
-                <h3 className="type-item text-ink">{m.title}</h3>
-                <p className="mt-2 measure-body text-[17px] leading-relaxed text-ink-body">{m.text}</p>
-                <Link href={m.href} className="link mt-3 inline-block text-ink">
-                  {m.more}
-                </Link>
-              </div>
-              <div className="relative aspect-[16/10] overflow-hidden rounded-[4px]">
-                <Image src={m.image} alt={m.alt} fill quality={85} sizes="(min-width: 768px) 40vw, 90vw" className="object-cover" />
-              </div>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-4">
-          <Button href="/how-it-works" kind="outline-dark">
-            See How It Works
-          </Button>
-          <p className="measure-body leading-relaxed text-ink-body">
-            The same four run at a school gate, a factory turnstile, a clinic reception and an estate boom.{" "}
-            <TextLink href="/contact">Tell us what your entrance looks like.</TextLink>
-          </p>
+            </div>
+          </div>
+          <div>
+            {/* Dividers start at the text edge, not under the icons. */}
+            <ul>
+              {jobs.map((j, i) => (
+                <li key={j.title} className="grid grid-cols-[auto_1fr] gap-x-5">
+                  <span className="mt-8 flex h-11 w-11 items-center justify-center rounded-full bg-amber" aria-hidden="true">
+                    <j.icon className="h-5 w-5 text-teal" />
+                  </span>
+                  <div className={`border-b border-ink/15 py-8 ${i === 0 ? "border-t" : ""}`}>
+                    <h3 className="type-item text-ink">{j.title}</h3>
+                    <p className="mt-2 measure-body text-[17px] leading-relaxed text-ink-body">{j.text}</p>
+                    <Link href={j.href} className="link mt-3 inline-block text-ink">
+                      {j.more}
+                    </Link>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 measure-body leading-relaxed text-ink-body">
+              The same four run at a school gate, a factory turnstile, a clinic reception and an estate boom. What
+              changes is the vocabulary, not the system. <TextLink href="/contact">Tell us what your entrance looks like.</TextLink>
+            </p>
+            <div className="mt-8">
+              <Button href="/how-it-works" kind="outline-dark">
+                See How It Works
+              </Button>
+            </div>
+          </div>
         </div>
       </Section>
 
