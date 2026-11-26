@@ -13,6 +13,7 @@ function Capability({
   items,
   image,
   imageAlt = "",
+  imageRatio,
   illustration,
 }: {
   id?: string;
@@ -22,6 +23,7 @@ function Capability({
   items: { title: string; text: ReactNode }[];
   image?: string;
   imageAlt?: string;
+  imageRatio?: string;
   illustration?: string;
 }) {
   return (
@@ -35,7 +37,7 @@ function Capability({
             {intro}
           </Lede>
         </div>
-        {image && <CirclePhoto src={image} alt={imageAlt} />}
+        {image && <CirclePhoto src={image} alt={imageAlt} ratio={imageRatio} />}
         {illustration && <Illustration name={illustration} dark={tone === "dark"} className="mx-auto max-w-[380px]" />}
       </div>
       <div className={`relative ${image ? "mt-14 md:mt-28" : "mt-14"}`}>
@@ -103,8 +105,9 @@ export default function SchoolsPage() {
         id="communication"
         tone="dark"
         title="Parents told while it still matters"
-        image="/images/phone.jpg"
-        imageAlt="A parent's phone showing a check-in notification"
+        image="/images/parent-home.jpg"
+        imageAlt="A parent at home smiling as she checks her phone"
+        imageRatio="aspect-[43/24]"
         intro="A push notification carries the pupil’s photo, so a parent can see at a glance that it is their child and not a mismatch. Push is the primary channel because it costs nothing per message. When it goes out is the school’s decision, not ours: the delay between the gate scan and the message is a setting, anywhere from immediate to five hours, and it ships at ten minutes."
         items={[
           { title: "The delay is a dial, and you hold it", text: "Ten minutes is the default, not a limit. A school that wants the alert to land before the pupil has reached the classroom sets it to zero; one that would rather absorb a pupil stepping back out to a waiting parent leaves it longer. The same screen sets the end-of-day sweep for pupils who never checked in, and can restrict it to weekdays." },
