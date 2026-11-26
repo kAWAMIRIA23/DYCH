@@ -1,66 +1,57 @@
 import Image from "next/image";
 import Link from "next/link";
-import { INDUSTRIES } from "@/lib/site";
 
+/**
+ * The home page opens on one real moment: 07:42, a pupil through the gate and
+ * a parent who already knows. The clock is the memorable element; everything
+ * around it stays quiet.
+ */
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-teal text-cream">
-      {/* The arrival photo, printed in the two brand inks: greyscale lifted
-          through screen onto teal, then shaded so the copy stays readable. */}
-      <div className="absolute inset-0 -z-10" aria-hidden="true">
-        <Image
-          src="/images/arrival.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[60%_40%] opacity-55 mix-blend-screen grayscale contrast-110"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_srgb,var(--color-teal)_75%,transparent)_0%,color-mix(in_srgb,var(--color-teal)_30%,transparent)_30%,color-mix(in_srgb,var(--color-teal)_94%,transparent)_62%)]" />
-      </div>
-
-      <div className="mx-auto mt-auto grid w-full max-w-7xl gap-10 px-4 pb-12 pt-36 sm:px-6 md:grid-cols-[1.4fr_1fr] md:items-end lg:px-16 lg:pb-14">
-        <h1 className="text-[clamp(2.6rem,5.4vw,5.4rem)] font-semibold leading-[0.98] tracking-[-0.035em] text-apricot">
-          <span className="sr-only">DYCH Technologies. </span>
-          Know who is on
-          <br />
-          your premises
-          <br />
-          in real time.
-        </h1>
-        <div>
-          <p className="measure-body text-lg leading-relaxed text-cream-soft">
-            Cards, PINs and paper registers are easy to share, forget or fake. Our system uses the face as the
-            credential: cameras recognise enrolled people as they walk in, mark presence automatically, and flag
-            anyone the system does not know.
+    <section className="relative isolate overflow-hidden bg-teal pb-20 pt-32 text-cream sm:pb-28 sm:pt-40">
+      <div
+        aria-hidden="true"
+        className="absolute -right-64 -top-72 -z-10 aspect-square w-[900px] rounded-full bg-[radial-gradient(circle,rgb(234_166_82/0.55)_0%,rgb(234_166_82/0.12)_45%,transparent_68%)]"
+      />
+      <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-16">
+        <div className="min-w-0">
+          <p
+            aria-hidden="true"
+            className="font-display text-[clamp(5rem,12vw,11rem)] font-semibold leading-[0.9] tracking-[-0.06em] text-apricot tabular-nums"
+          >
+            07:42
           </p>
-          <div className="mt-7 flex flex-wrap gap-3.5">
-            <Link href="/contact" className="btn border-white bg-cream text-teal hover:bg-white">
+          <h1 className="mt-5 measure-heading text-[clamp(2.1rem,4.4vw,3.75rem)] font-semibold leading-[1.02] tracking-[-0.03em]">
+            <span className="sr-only">DYCH Technologies. At 07:42, </span>
+            Sarah walked through the gate. Her mother already knows.
+          </h1>
+          <p className="mt-6 measure-body text-lg leading-relaxed text-mist">
+            Smart Vizion recognises each pupil at the entrance, writes the register and tells the parent, before the
+            first lesson starts.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3.5">
+            <Link href="/contact" className="btn border-white bg-apricot text-teal hover:bg-cream">
               Book a Demo
             </Link>
-            <Link
-              href="/how-it-works"
-              className="btn border-cream text-cream hover:bg-cream/10"
-            >
+            <Link href="/how-it-works" className="btn border-mist text-cream hover:border-apricot hover:text-apricot">
               See How It Works
             </Link>
           </div>
         </div>
+        <div className="relative mx-auto w-full max-w-[480px]">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[4px]">
+            <Image
+              src="/images/parent-alert.jpg"
+              alt="A parent at home smiling at her phone as a DYCH Parent App notification says her child has checked in"
+              fill
+              priority
+              quality={90}
+              sizes="(min-width: 1024px) 40vw, 90vw"
+              className="object-cover object-[42%_40%]"
+            />
+          </div>
+        </div>
       </div>
-
-      <ul className="grid border-t border-cream/30 md:grid-cols-3">
-        {INDUSTRIES.map((s, i) => (
-          <li key={s.href} className={i > 0 ? "border-t border-cream/30 md:border-l md:border-t-0" : ""}>
-            <Link
-              href={s.href}
-              className="group flex items-baseline justify-between gap-4 px-4 py-5 hover:bg-cream sm:px-6 lg:px-16"
-            >
-              <span className="font-semibold group-hover:text-teal">{s.label}</span>
-              <span className="text-right text-sm text-cream-soft group-hover:text-ink-sub">{s.note}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
     </section>
   );
 }
