@@ -60,7 +60,7 @@ export const CONTACT = {
     { display: "+256 708 180 987", href: "tel:+256708180987" },
     { display: "+256 788 195 067", href: "tel:+256788195067" },
   ],
-  email: "dychtech256@gmail.com",
+  email: "info@dychtechnologies.com",
   location: "Kampala, Uganda",
   linkedin: "https://www.linkedin.com/company/dychtechnologies/",
 };
